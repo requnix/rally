@@ -2,7 +2,7 @@
   <v-app dark>
     <v-toolbar app>
       <!-- TODO: Insert logo -->
-      <div>Route 62 Rally</div>
+      <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
       <v-btn flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })">About event</v-btn>
       <v-btn flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })">Registration Info</v-btn>
@@ -73,7 +73,7 @@
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text>
-            <p>February 2019 once again sees the start of the most definitive Harley-Davidson Rally south of the Sahara. <strong>The Famous Route 62 Rally</strong> will once again take place at the Avalon Springs Resort in Montagu, Western Cape from 14 Feb – 17 Feb 2018.</p>
+            <p>February 2019 once again sees the start of the most definitive Harley-Davidson Rally south of the Sahara. <strong>The Famous Route 62 Rally</strong> will once again take place at the Avalon Springs Resort in Montagu, Western Cape from 14 Feb – 17 Feb 2019.</p>
             <p style="text-align: center; line-height: 1.5;"><strong>THIS WILL BE OUR 13<sup>th</sup> RALLY and you don’t want to miss this one.</strong></p>
             <p>The Route 62 Rally is the longest consecutive running Harley Davidson rally in South Africa and in 2018 we celebrated our 12th Birthday. We have moved the bar considerable higher from previous years so you need to join us and be part of this 2019 celebration. There will be music, stalls, tattoo artists, food stalls, Harley games, famous out rides, party and fun.</p>
             <br>
@@ -125,7 +125,7 @@
             <p>Once payment has been made, you can book your accommodation at the host hotel. The host hotel will not take bookings until confirmation is received from the Rally Committee that full payment for the rally has been completed.</p>
             <p>Pre-registration is the way to go!</p>
             <p><strong>On-site Registration:</strong> Registration can be done on-site during the rally but does not include a t-shirt and pin which are pre-made based on pre-registration.</p>
-            <p>Please note: Check-ins on Thursday, February 14, and Friday, February 15, at main gate will close at 6.00pm. Should you be arriving after 6pm please contact Ammi at <a href="mailto:ammi@iafrica.com">ammi@iafrica.com</a> to arrange for late arrival check-in.</p>
+            <p>Please note: Check-ins on Thursday, February 14, and Friday, February 15, at main gate will close at 6.00pm. Should you be arriving after 6pm please contact Ammi at <a class="deep-orange--text" href="mailto:ammi@iafrica.com">ammi@iafrica.com</a> to arrange for late arrival check-in.</p>
           </v-card-text>
           <v-card-actions>
             <v-btn color="deep-orange" href="/registrations/new?rider=true">
@@ -534,7 +534,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.avalonsprings.co.za">
-                      <img src="images/sponsors/avalon-springs.jpg">
+                      <%= image_tag 'sponsors/avalon-springs.jpg' %>
                     </a>
                     <span>Avalon Springs</span>
                   </v-tooltip>
@@ -543,7 +543,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.touaregtents.co.za">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/touareg.jpg">
+                      <%= image_tag 'sponsors/touareg.jpg' %>
                     </a>
                     <span>Touareg Tents</span>
                   </v-tooltip>
@@ -552,7 +552,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.boncourage.co.za">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/boncourage.jpg">
+                      <%= image_tag 'sponsors/boncourage.jpg' %>
                     </a>
                     <span>Bon Courage</span>
                   </v-tooltip>
@@ -561,7 +561,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.hd-tygervalley.co.za">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/hd.jpg">
+                      <%= image_tag 'sponsors/hd-tygervalley.jpg' %>
                     </a>
                     <span>Harley-Davidson Tyger Valley</span>
                   </v-tooltip>
@@ -570,7 +570,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.monsterenergy.com/za/en/home/">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/monster.jpg">
+                      <%= image_tag 'sponsors/monster.jpg' %>
                     </a>
                     <span>Monster Energy</span>
                   </v-tooltip>
@@ -579,7 +579,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.medway.co.za/">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/medway.jpg">
+                      <%= image_tag 'sponsors/medway.jpg' %>
                     </a>
                     <span>Med Way</span>
                   </v-tooltip>
@@ -588,7 +588,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="https://www.dreamvacs.com/">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/dreamvacationclub.jpg">
+                      <%= image_tag 'sponsors/dreamvacationclub.jpg' %>
                     </a>
                     <span>Dream Vacation Club</span>
                   </v-tooltip>
@@ -597,7 +597,7 @@
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
                     <a slot="activator" href="http://www.psg.co.za/centurion-short-term">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2015/09/psg-konsult-logo-resized2.jpg">
+                      <%= image_tag 'sponsors/psg-konsult.jpg' %>
                     </a>
                     <span>PSG Insure</span>
                   </v-tooltip>
@@ -605,8 +605,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="http://topcopy.co.za/">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/TopCopy.jpg">
+                    <a slot="activator" href="http://topcopy.co.za">
+                      <%= image_tag 'sponsors/TopCopy.jpg' %>
                     </a>
                     <span>Top Copy</span>
                   </v-tooltip>
@@ -614,8 +614,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/RGJack.jpg">
+                    <a slot="activator" href="http://www.rgjack.co.za/">
+                      <%= image_tag 'sponsors/RGJack.jpg' %>
                     </a>
                     <span>RG Jack &amp; Son</span>
                   </v-tooltip>
@@ -623,8 +623,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/MikeScholtz.jpg">
+                    <a slot="activator" href="http://www.mikescholtzelectrical.co.za/">
+                      <%= image_tag 'sponsors/MikeScholtz.jpg' %>
                     </a>
                     <span>Mike Scholtz Electrical</span>
                   </v-tooltip>
@@ -632,8 +632,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/Diesel-and-Creme-Logo-Final-IMG-20131105-WA0009.jpg">
+                    <a slot="activator" href="http://dieselandcreme.co.za/">
+                      <%= image_tag 'sponsors/diesel-creme.jpg' %>
                     </a>
                     <span>Diesel &amp; Crème</span>
                   </v-tooltip>
@@ -641,8 +641,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/Dream.jpg">
+                    <a slot="activator" href="https://www.dreamresorts.co.za/">
+                      <%= image_tag 'sponsors/dream-hotels.jpg' %>
                     </a>
                     <span>Dream Hotels &amp; Resorts</span>
                   </v-tooltip>
@@ -650,8 +650,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/Copytype.jpg">
+                    <a slot="activator" href="https://www.copytype.co.za/">
+                      <%= image_tag 'sponsors/copytype.jpg' %>
                     </a>
                     <span>Copytype</span>
                   </v-tooltip>
@@ -659,8 +659,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="http://www.ashersons.co.za/">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/ashersons.jpg">
+                    <a slot="activator" href="http://www.ashersons.co.za">
+                      <%= image_tag 'sponsors/ashersons.jpg' %>
                     </a>
                     <span>Ashersons</span>
                   </v-tooltip>
@@ -668,8 +668,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2017/02/Audiolens.jpg">
+                    <a slot="activator" href="http://www.audiolens.co.za/">
+                      <%= image_tag 'sponsors/Audiolens.jpg' %>
                     </a>
                     <span>Audiolens</span>
                   </v-tooltip>
@@ -677,8 +677,8 @@
 
                 <v-flex xs12 sm6 md4 lg3>
                   <v-tooltip top>
-                    <a slot="activator" href="">
-                      <img src="http://route62rally.co.za/wp-content/uploads/2017/02/harleymoon.jpg">
+                    <a slot="activator">
+                      <%= image_tag 'sponsors/harleymoon.jpg' %>
                     </a>
                     <span>Harley Moon</span>
                   </v-tooltip>
