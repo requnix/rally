@@ -1,7 +1,6 @@
 <div id="app">
   <v-app dark>
     <v-toolbar app>
-      <!-- TODO: Insert logo -->
       <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
       <v-btn flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })">About event</v-btn>
@@ -29,7 +28,6 @@
         <v-carousel-item src="images/slider4-2017.jpg">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <!-- TODO: Center text vertically -->
               <!-- TODO: Vignette the image so the text is readable -->
               <h4 class="title white--text">14 FEB - 17 FEB 2019</h4>
               <h1 class="display-3 white--text">JOIN US IN 2019</h1>
@@ -53,9 +51,26 @@
             <p>(click here to see the teaser video from 2015)</p>
             <p>Registrations are closed!</p>
           </v-card-text>
-          <!-- TODO: Make a countdown timer -->
+          <!-- Countdown Timer -->
           <v-card-text>
-            {{ new Date() }}
+            <div id="clockdiv">
+              <div>
+                <span class="days"></span>
+                <div class="smalltext">Days</div>
+              </div>
+              <div>
+                <span class="hours"></span>
+                <div class="smalltext">Hours</div>
+              </div>
+              <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+              <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+            </div>
           </v-card-text>
         </v-card>
 
@@ -753,4 +768,7 @@ window.Vue = new Vue({
     }
   }
 })
+
+var deadline = new Date(2019, 2, 14, 8, 30)
+initializeClock('clockdiv', deadline)
 </script>
