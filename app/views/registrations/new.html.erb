@@ -1,0 +1,172 @@
+<div id="app">
+  <v-app dark>
+    <v-toolbar app>
+      <!-- TODO: Insert logo -->
+      <div>Route 62 Rally</div>
+      <v-spacer></v-spacer>
+      <v-btn flat href="/#about-event">About event</v-btn>
+      <v-btn flat href="/#registration-info">Registration Info</v-btn>
+      <v-btn flat href="/#programme">Programme</v-btn>
+      <v-btn flat href="/#accommodation">Accommodation</v-btn>
+      <v-btn flat href="/#charity">Charity</v-btn>
+      <v-btn flat href="/#sponsors">Sponsors</v-btn>
+      <v-btn flat href="/#contact">Contact</v-btn>
+    </v-toolbar>
+
+    <% flash.each do |key, message| %>
+    <v-dialog v-model="flashes.<%= key %>" max-width="320px">
+      <v-card>
+        <v-card-text><%= message %></v-card-text>
+        <v-card-actions class="text-xs-center">
+          <v-btn color="deep-orange" @click="flashes.<%= key %> = false">OK</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <% end %>
+
+    <v-content id="top">
+      <v-container>
+        <v-card id="programme" class="mb-4">
+          <v-card-title>
+            <div class="title">Registration</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-form v-model="valid" action="/registrations" method="POST">
+            <v-card-text>
+              <input type="hidden" name="authenticity_token" :value="csrf">
+
+              <v-radio-group v-model="registration.rider">
+                <v-radio label="Rider" :value="true"></v-radio>
+                <v-radio label="Pillion" :value="false"></v-radio>
+              </v-radio-group>
+              <input type="hidden" name="rider" :value="registration.rider">
+
+              <v-text-field
+                label="First Name" name="first_name"
+                v-model="registration.firstName"
+                required :rules="[(v) => !!v || 'Please provide your first name']"
+              ></v-text-field>
+
+              <v-text-field
+                label="Last Name" name="last_name"
+                v-model="registration.lastName"
+                required :rules="[(v) => !!v || 'Please provide your last name']"
+              ></v-text-field>
+
+              <v-text-field
+                label="E-mail" name="email"
+                v-model="registration.email"
+                required :rules="[(v) => !!v || 'Please provide a contact email address']"
+              ></v-text-field>
+
+              <v-text-field
+                label="Residential Address" name="residential_address"
+                v-model="registration.residential" multi-line auto-grow
+                required :rules="[(v) => v.length > 0 || 'Please provide an address']"
+              ></v-text-field>
+
+              <v-text-field
+                label="Postal Address" name="postal_address"
+                v-model="registration.postal" multi-line auto-grow
+                hint="Leave this blank if it is the same as the residential address"
+              ></v-text-field>
+
+              <v-text-field
+                label="Contact Number" name="contact_number"
+                v-model="registration.contact"
+                required :rules="[(v) => !!v || 'Please provide a contact number']"
+              ></v-text-field>
+
+              <v-text-field
+                label="Alternate Contact Number" name="alternate_contact_number"
+                v-model="registration.alternateContact"
+                hint="Provide an alternate number to contact you if you have one"
+              ></v-text-field>
+
+              <v-text-field
+                label="Club / Chapter" name="chapter"
+                v-model="registration.chapter"
+                hint="Please provide your club and chapter affiliation if you are a member of a club"
+              ></v-text-field>
+
+              <v-text-field
+                label="Bike" name="motorcycle"
+                v-model="registration.motorcycle"
+                required :rules="[(v) => !!v || 'You need to add your bike here']"
+                hint="Let us know what bike your ride"
+              ></v-text-field>
+
+              <v-select
+                label="T-shirt Size"
+                v-model="registration.shirt"
+                :items="['Small', 'Medium', 'Large', 'X-Large', '2X-Large', '3X-Large', '4X-Large']"
+                required :rules="[(v) => !!v || 'You need to pick a shirt size']"
+              ></v-select>
+              <input type="hidden" name="shirt_size" :value="registration.shirt">
+
+              <v-select
+                label="Payment Method"
+                v-model="registration.payment"
+                :items="['EFT (Electronic Fund Transfer)', 'Cash Deposit']"
+                required hint="Banking details will be mailed to you when you submit your registration"
+              ></v-select>
+              <input type="hidden" name="payment_method" :value="registration.payment">
+
+              <v-checkbox
+                label="I accept the terms and conditions"
+                v-model="registration.terms" required
+                :rules="[(v) => !!v || 'You have to accept the terms and conditions to register']"
+              ></v-checkbox>
+              <input type="hidden" name="terms_and_conditions" :value="registration.terms">
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn :disabled="!valid" color="primary" type="submit">Register as a {{ registration.rider ? 'Rider' : 'Pillion' }}</v-btn>
+          </v-form>
+        </v-card>
+      </v-container>
+    </v-content>
+  </v-app>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+<script>
+window.Vue = new Vue({
+  el: '#app',
+  created() {
+    this.csrf = document.querySelector("meta[name='csrf-token']").content
+  },
+  data: {
+    csrf: '',
+    flashes: {
+      <% flash.each do |key, message| %>
+      <%= key %>: true,
+      <% end %>
+    },
+    valid: false,
+    registration: {
+      rider: <%= @registration.rider %>,
+      firstName: '<%= @registration.first_name %>',
+      lastName: '<%= @registration.last_name %>',
+      residential: '<%= (@registration.residential_address || '').gsub("\r\n", '\\n') %>',
+      postal: '<%= (@registration.postal_address || '').gsub("\r\n", '\\n') %>',
+      contact: '<%= @registration.contact_number %>',
+      alternateContact: '<%= @registration.alternate_contact_number %>',
+      email: '<%= @registration.email %>',
+      motorcycle: '<%= @registration.motorcycle %>',
+      chapter: '<%= @registration.chapter %>',
+      shirt: '<%= @registration.shirt_size || 'Large' %>',
+      payment: '<%= @registration.payment_method || 'EFT (Electronic Fund Transfer)' %>',
+      terms: false
+    }
+  }
+})
+</script>

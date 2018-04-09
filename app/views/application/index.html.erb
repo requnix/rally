@@ -1,0 +1,756 @@
+<div id="app">
+  <v-app dark>
+    <v-toolbar app>
+      <!-- TODO: Insert logo -->
+      <div>Route 62 Rally</div>
+      <v-spacer></v-spacer>
+      <v-btn flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })">About event</v-btn>
+      <v-btn flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })">Registration Info</v-btn>
+      <v-btn flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })">Programme</v-btn>
+      <v-btn flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })">Accommodation</v-btn>
+      <v-btn flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })">Charity</v-btn>
+      <v-btn flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })">Sponsors</v-btn>
+      <v-btn flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })">Contact</v-btn>
+    </v-toolbar>
+
+    <% flash.each do |key, message| %>
+    <v-dialog v-model="flashes.<%= key %>" max-width="320px">
+      <v-card>
+        <v-card-text><%= message %></v-card-text>
+        <v-card-actions class="text-xs-center">
+          <v-btn color="deep-orange" @click="flashes.<%= key %> = false">OK</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <% end %>
+
+    <v-content id="top">
+      <v-carousel height="669">
+        <v-carousel-item src="images/slider4-2017.jpg">
+          <v-container fill-height>
+            <v-layout column align-center justify-center>
+              <!-- TODO: Center text vertically -->
+              <!-- TODO: Vignette the image so the text is readable -->
+              <h4 class="title white--text">14 FEB - 17 FEB 2019</h4>
+              <h1 class="display-3 white--text">JOIN US IN 2019</h1>
+              <h4 class="title white--text">MONTAGU</h4>
+            </v-layout>
+          </v-container>
+        </v-carousel-item>
+      </v-carousel>
+
+      <v-container>
+        <!-- Countdown -->
+        <v-card id="countdown" class="mb-4">
+          <v-card-title>
+            <div>
+              <div class="display-3">Our 13th Rally Weekend</div>
+              <div class="title">14 - 17 February 2019, Montagu</div>
+            </div>
+          </v-card-title>
+          <!-- TODO: Embed the teaser video -->
+          <v-card-text>
+            <p>(click here to see the teaser video from 2015)</p>
+            <p>Registrations are closed!</p>
+          </v-card-text>
+          <!-- TODO: Make a countdown timer -->
+          <v-card-text>
+            {{ new Date() }}
+          </v-card-text>
+        </v-card>
+
+        <!-- About Event -->
+        <v-card id="about-event" class="mb-4">
+          <v-card-title>
+            <div class="title">About the Event</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <p>February 2019 once again sees the start of the most definitive Harley-Davidson Rally south of the Sahara. <strong>The Famous Route 62 Rally</strong> will once again take place at the Avalon Springs Resort in Montagu, Western Cape from 14 Feb – 17 Feb 2018.</p>
+            <p style="text-align: center; line-height: 1.5;"><strong>THIS WILL BE OUR 13<sup>th</sup> RALLY and you don’t want to miss this one.</strong></p>
+            <p>The Route 62 Rally is the longest consecutive running Harley Davidson rally in South Africa and in 2018 we celebrated our 12th Birthday. We have moved the bar considerable higher from previous years so you need to join us and be part of this 2019 celebration. There will be music, stalls, tattoo artists, food stalls, Harley games, famous out rides, party and fun.</p>
+            <br>
+            <p><strong>Cape Route 62</strong> is the tourist route in the Western Cape and Eastern Cape, South Africa that meanders between Cape Town and Oudtshoorn, the Langkloof and Port Elizabeth, offering the shorter, scenic alternative to the N2 highway, prompting associations with the legendary USA Route 66 byway. Cape Route 62 will take you along the longest wine route in the Western Cape and most likely the whole world.</p>
+            <p>It’s an area of <strong>magnificent landscapes</strong> and towering cliffs, crystal clear streams and an abundance of trees and indigenous flora – all contribute to make this some of South Africa’s most diverse regions. The ever changing colours of the majestic mountains, scenic passes, rivers, vineyards and orchards, as well as the multitude of attractions, will offer you an unforgettable adventure – whether this is in the physical sense or simply a kaleidoscope of scenic tranquility. Those who have traversed the twists and turns of Cape Route 62 return time and time again and affirm that it is “The Road” that provides them with the most <strong>inspiring adventures</strong>.</p>
+            <p>Each February since 2007 has seen the staging in Montagu of the Route 62 Harley Rally. It is currently staged at the host site of <strong>Avalon Springs in Montagu</strong>. With over 500 bikers attending, it is one of the biggest and best Harley rallies in Africa hosted by a single club, Free Chapter of Cape Town.</p>
+            <p>Harley Bikers from all over South Africa and even from other countries make their way to Montagu on a wide range of bikes, dressed in denim and leather and bedecked with patches and badges. They are warmly welcomed by the friendly reception crew and each receives a well-stocked goody-bag. The program includes <strong>interesting outrides, great food, cold frosties and rock bands to party the nights away</strong>.</p>
+            <p>On Saturday morning the traditional mass ride takes the posse of gleaming chrome in a rolling thunder of V-Twin engines through the local streets. This is followed by a variety of challenging Harley Games back at the rally site, designed to test skills to the limit.</p>
+            <p>The rally site is well served by local wine estates, a tattoo artist, a Harley dealer &amp; workshop, Sushi bar,  bike wash, food stalls and more. Each evening the roar of Harleys is replaced by the rock bands that ensure a pulsating rhythm continues long into the night. For those wanting a more leisurely pace, there are the soothing waters of the <strong>hot springs and plunge pools</strong>.</p>
+            <p>It is more blessed to give than to receive and funds are raised for <strong>charities</strong> serving the local communities. It is always a happy weekend followed by sad farewells to new friends and old with the hope of meeting again next year at the <strong>Route62 Rally</strong>.</p>
+          </v-card-text>
+          <!-- TODO: Add gallery -->
+        </v-card>
+
+        <!-- Registration Info -->
+        <v-card id="registration-info" class="mb-4">
+          <v-card-title>
+            <div class="title">Registration Info</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <p>This is a closed <strong>Harley-Davidson Motorcycle Rally</strong> and is open to all <strong>Harley-Davidson</strong> riders and pillions only.</p>
+            <p><strong>On-Line Registration:</strong> On-line registration will open on 1st June 2018 for the 2019 Rally.<br />
+            Please note: <strong>Each participant will need to fill in a separate registration</strong> &#8211; the rally fee of <strong>R750</strong> is per person irrespective if you are a rider or a pillion.<br />
+            Please note: Children under 12 years free, however you need to pay for their meals (Special Kids meal pricing will be available on site).</p>
+            <p><strong>All other children, guests, back up drivers, assistants, mechanics, bike washers and lookers on need to register and pay the full rally fee.</strong></p>
+            <p><strong>Rally Pack Distribution:</strong> NO packs will be mailed. Rally packs will be distributed at the Registration Center during check-in. Unclaimed packs will be sold at the close of the registration on Saturday.</p>
+            <p><strong>Registration Confirmation:</strong> A registration confirmation email with your unique reference number will be mailed to you when you complete your online registration. Please contact us if you do not receive the email confirmation; however the likelihood is that your SPAM filter has blocked the email as it comes from a bulk email server. Check your locked emails.</p>
+            <p>Bookings at the Host Hotel can only be made after successful online registration and confirmation of payment for the rally has been received.</p>
+            <p>The hotel will be provided with an updated list of all paid up registrations. We request that you contact the host hotel after you receive your registration number. The recommendation is to book at the host hotel as the rally is centered within the grounds of the Avalon Hotel and warm mineral water springs.</p>
+            <p>The on-site Registration Centre will be at the Main Gate at the Avalon Springs Host Hotel in Montagu.</p>
+            <p>Registration check-in times at the rally are in the programme. A copy of your registration confirmation needs to be presented at check-in.</p>
+            <p>NOTE: The pre-registration fee is non-refundable. 50% is refundable if cancellation is received in writing (email or fax) before 31 December 2018. If you are unable to attend the rally after registering, we request that you send your confirmation email with someone else to pick-up your rally pack for you. Substitutes are accepted in writing (email or fax).</p>
+            <p><strong>Registration Payment:</strong> First we would like to thank you for your interest in attending our rally; we will make every effort to ensure this is a great experience and look forward to hosting you.</p>
+            <p>
+              <span style="text-decoration: underline;">There are two payment options:</span><br>
+              1. Pay by EFT into the Rally Bank Account (banking details will be in your return email once you register).<br>
+              2. Do a deposit into the Rally Bank Account by doing a direct deposit at your bank (banking details will be in your return email once you register).
+            </p>
+
+            <p>Please use your unique registration reference number received in your confirmation email for all payments to ensure that we are able to match your payment to your registration. The EFT and direct payment bank details are included in your confirmation email.</p>
+            <p>Once payment has been made, you can book your accommodation at the host hotel. The host hotel will not take bookings until confirmation is received from the Rally Committee that full payment for the rally has been completed.</p>
+            <p>Pre-registration is the way to go!</p>
+            <p><strong>On-site Registration:</strong> Registration can be done on-site during the rally but does not include a t-shirt and pin which are pre-made based on pre-registration.</p>
+            <p>Please note: Check-ins on Thursday, February 14, and Friday, February 15, at main gate will close at 6.00pm. Should you be arriving after 6pm please contact Ammi at <a href="mailto:ammi@iafrica.com">ammi@iafrica.com</a> to arrange for late arrival check-in.</p>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="deep-orange" href="/registrations/new?rider=true">
+              Register as a Rider
+            </v-btn>
+            <v-btn color="deep-orange" href="/registrations/new?rider=false">
+              Register as a Pillion
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+
+        <v-card id="programme" class="mb-4">
+          <v-card-title>
+            <div class="title">Programme</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <v-container fluid style="min-height: 0;" grid-list-lg>
+              <v-layout row wrap>
+                <v-flex xs12 lg4>
+                  <v-card class="elevation-3">
+                    <v-card-title class="deep-orange headline">
+                      Thursday 14<sup>th</sup> &nbsp;February 2019
+                    </v-card-title>
+                    <table class="grey darken-4 table">
+                      <tbody>
+                        <tr><td>
+                          <strong>9:00</strong> Registrations open at main gate.
+                        </td></tr>
+                        <tr><td>
+                          <strong>10:00</strong>
+                          Check in, drop your bags. Meet and greet fellow riders.
+                          Browse through the rally site and stalls. Grab a cold one and chill.
+                        </td></tr>
+                        <tr><td>
+                          <strong>11:00</strong> Bar opens
+                        </td></tr>
+                        <tr><td>
+                          <strong>
+                            Grab your WINE PASSPORT card supplied in your Rally Pack.
+                            Visit the wine farms printed, get your sticker at the various
+                            wine farms and stand a chance to win awesome lucky draw prizes
+                            for fully completed cards.
+                          </strong>
+                        </td></tr>
+                        <tr><td>
+                          <strong>18:00</strong> Onwards. Music by <!-- TODO --> at the Calypso Pool Bar
+                        </td></tr>
+                        <tr><td>
+                          Grab some food from the varied food stalls on site in the main Harley village
+                        </td></tr>
+                        <tr><td>
+                          <strong>18:00</strong> till Late. <strong>CALYPSO POOL PARTY</strong>.
+                          Join the fun in the hot pool with cool sounds from our resident DJ
+                        </td></tr>
+                      </tbody>
+                    </table>
+                  </v-card>
+                </v-flex>
+
+                <v-flex xs12 lg4>
+                  <v-card class="elevation-3">
+                    <v-card-title class="deep-orange headline">
+                      Friday 15<sup>th</sup> &nbsp;February 2019
+                    </v-card-title>
+                    <table class="grey darken-4 table">
+                      <tbody>
+                        <tr><td>
+                          <strong>7:00</strong>
+                          Breakfast included for hotel guests opens. Not a hotel guest,
+                          you can still get a great breakfast @ R90 served in Cogman’s
+                          Restaurant or at the food stalls on site.
+                        </td></tr>
+                        <tr><td>
+                          <strong>08:00</strong> Registrations open
+                        </td></tr>
+                        <tr><td>
+                          <strong>09:30</strong>
+                          Outride to <strong>Diesel &amp; Creme</strong> in Barrydale.
+                          No official out ride. Join up with friends and make your way
+                          at your leisure to Barrydale for some great food and the best
+                          milkshakes south of the Equator. Take a ride up the
+                          <strong>Tradouw Pass</strong> for a great photo opportunity.
+                        </td></tr>
+                        <tr><td>
+                          <strong>12:00 – 12:30</strong>
+                          Arrive end destination. Burgers &amp; Hotdogs available.
+                          Music to chill by. Cash bar. Don’t forget their famous Milk Shakes.
+                        </td></tr>
+                        <tr><td>
+                          Make your own way back. Visit the wine farms on your Wine Passport Card
+                          and get the sticker. Lucky draw prizes for completed cards.
+                        </td></tr>
+                        <tr><td>
+                          <strong>18:00</strong> Live music to get you in the mood
+                        </td></tr>
+                        <tr><td>
+                          <strong>18:00</strong> till Late.
+                          Grab something to eat from the varied food stalls and join
+                          us for a night of music and dancing.
+                        </td></tr>
+                        <tr><td>
+                          <strong>19:30</strong>
+                          Main Band “<!-- TODO -->” on stage. Party the night away.
+                        </td></tr>
+                      </tbody>
+                    </table>
+                  </v-card>
+                </v-flex>
+
+                <v-flex xs12 lg4>
+                  <v-card class="elevation-3">
+                    <v-card-title class="deep-orange headline">
+                      Saturday 16<sup>th</sup> &nbsp;February 2019
+                    </v-card-title>
+                    <table class="grey darken-4 table">
+                      <tbody>
+                        <tr><td>
+                          <strong>7:00</strong>
+                          Breakfast included for hotel guests opens. Not a hotel guest,
+                          you can still get a great breakfast @ R90 served in Cogman’s
+                          Restaurant or in the food court.
+                        </td></tr>
+                        <tr><td>
+                          <strong>11:30</strong>
+                          Line up outside main gate for Mass Ride. Watch for Marshals.
+                          Please join this very integral part of the Rally. The townsfolk
+                          look forward to Rolling Thunder in their town.
+                        </td></tr>
+                        <tr><td>
+                          <strong>12:00</strong>
+                          Mass Ride starts. After mass ride grab something to eat,
+                          grab a cold one and a seat and join us for the best
+                          <strong>Harley Games X Far</strong>.
+                        </td></tr>
+                        <tr><td>
+                          Last chance to get your Wine Passport Cards stickered for
+                          great prizes. On completion drop in draw box at the FCCT stall.
+                        </td></tr>
+                        <tr><td>
+                          <strong>14:00</strong> Harley games start. Enter and win some prizes.
+                        </td></tr>
+                        <tr><td>
+                          <strong>16:30</strong>
+                          Enter your bike in the Karoo Bike Show. Some cool prizes to be won.
+                        </td></tr>
+                        <tr><td>
+                          <strong>17:00</strong> Wine Passport box closes.
+                        </td></tr>
+                        <tr><td>
+                          <strong>17:30</strong>
+                          Bike concourse judging starts
+                        </td></tr>
+                        <tr><td>
+                          <strong>19:00</strong>
+                          Buffet Dinner served by Avalon Springs (included in your registration)
+                        </td></tr>
+                        <tr><td>
+                          <strong>20:00</strong>
+                          Some unavoidable speeches and thank you’s. Raffle draw and prize giving.
+                          Thereafter, <strong>PARTY THE NIGHT AWAY!</strong>
+                        </td></tr>
+                      </tbody>
+                    </table>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+            <p>
+              <strong>Please note:</strong>
+              The registrations at the main gate will close every evening at 18:00.
+              Should you arrive after, you need to inform security, who will take you to Hotel
+              reception where we will accommodate.
+            </p>
+            <!-- TODO: Make a programme PDF -->
+            <!-- <p><a href="files/programme.pdf">Click here to download a PDF of the programme.</a></p> -->
+          </v-card-text>
+        </v-card>
+
+        <!-- Accommodation -->
+        <v-card id="accommodation" class="mb-4">
+          <v-card-title>
+            <div class="title">Accommodation</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+
+            <v-card color="grey darken-4" class="mb-2">
+              <v-card-title class="deep-orange">
+                <div class="subheading">Avalon Springs Resort</div>
+                <v-spacer></v-spacer>
+                <v-btn small flat fab href="mailto:debbie@avalonsprings.co.za"><v-icon>mail</v-icon></v-btn>
+                <v-btn small flat fab href="http://www.avalonsprings.co.za"><v-icon>public</v-icon></v-btn>
+              </v-card-title>
+              <v-card-text>
+                <p>The Avalon Springs Resort is once again the Host Hotel for the 2018 Route 62 Rally. The hotel boasts natural hot water springs that allow for the best relaxation one could wish for.</p>
+                <p>The GPS coordinates for the hotel are 33 Deg 45’56.94″S – 20 Deg 07’02.76″E</p>
+                <p>Each room has an en suite bathroom, small fridge, air-conditioning, television with DSTV, DVD player, hairdryer, and coffee and tea making facilities.</p>
+                <p>The hotel facilities include the fantastic Cogman’s dining room, the John Montagu Bar and Lounge and of course full access to the mineral water spa pools that reach 43 degrees Celsius and have their own bar and catering facilities.</p>
+                <p>The mountain chalets are units with an undercover porch with built in braai area, a lounge, a fully fitted open plan kitchen and two double bedrooms each with an en suite bathroom. The lounge and bedrooms each have their own TV and the chalets are air-conditioned with a private outdoor spa bath per unit. The hotel must be booked for a minimum of two nights on the Friday and Saturday nights.</p>
+                <p>Prices for the hotel rooms (per person per night) including breakfast are:</p>
+
+                <table class="table mb-2">
+                  <thead>
+                    <tr>
+                      <th class="text-xs-left">Description</th>
+                      <th class="text-xs-left">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Single</td>
+                      <td>R 900</td>
+                    </tr>
+                    <tr>
+                      <td>Double sharing</td>
+                      <td>R 450 per person</td>
+                    </tr>
+                    <tr>
+                      <td>Triple or more sharing</td>
+                      <td>R 400 per person</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>Use your Rally reference number and contact Debbie Nel for all your accommodation bookings.</p>
+
+                <v-card>
+                  <v-card-title>
+                    <div>
+                      <div class="title">Debbie Nel</div>
+                      <div class="">Front Office Manager</div>
+                    </div>
+                  </v-card-title>
+                  <v-list>
+                    <v-list-tile avatar href="tel:+27236141150">
+                      <v-list-tile-avatar><v-icon>contact_phone</v-icon></v-list-tile-avatar>
+                      <v-list-tile-content>
+                        <v-list-tile-title>023 614 1150</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile avatar href="mailto:debbie@avalonsprings.co.za">
+                      <v-list-tile-avatar><v-icon>contact_mail</v-icon></v-list-tile-avatar>
+                      <v-list-tile-content>
+                        <v-list-tile-title>debbie@avalonsprings.co.za</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                  </v-list>
+                </v-card>
+              </v-card-text>
+
+              <!-- TODO: Add a gallery -->
+            </v-card>
+
+            <v-card color="grey darken-4" class="mb-2">
+              <v-card-title class="deep-orange">
+                <div class="subheading">Montagu Springs</div>
+                <v-spacer></v-spacer>
+                <v-btn small flat fab href="http://www.montagusprings.co.za/"><v-icon>public</v-icon></v-btn>
+              </v-card-title>
+              <v-card-text>
+                <p>Montagu Springs situated adjacent to the Avalon Springs Host Hotel offers 90 self catering facilities with units sleeping up to four people. This tranquil resort with its palm lined entrance, peach and plum orchards, colorful bougainvillea and roses offers an alternate to the host hotel.</p>
+                <p>Special Rally Prices for the Plettenberg homes are per person sharing excluding breakfast. Meals including breakfast can be provided by Avalon Springs Hotel for your account.Should you wish to extend your stay the same rate will apply for the extended dates – subject to availability.</p>
+                <p>Effective Dates: 14 Feb – 17 Feb 2019</p>
+
+                <table class="table mb-2">
+                  <thead>
+                    <tr>
+                      <th class="text-xs-left">Description</th>
+                      <th class="text-xs-left">Two people</th>
+                      <th class="text-xs-left">Three or more</th>
+                      <th class="text-xs-left">Single</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Small Pletts</td>
+                      <td>R 518</td>
+                      <td>N/A</td>
+                      <td>R 900</td>
+                    </tr>
+                    <tr>
+                      <td>Large Pletts</td>
+                      <td>R 570</td>
+                      <td>R 390</td>
+                      <td>R 990</td>
+                    </tr>
+                    <tr>
+                      <td>Josmont Heights &amp; Golden Terraces</td>
+                      <td>R 685</td>
+                      <td>R 460</td>
+                      <td>R 1,100</td>
+                    </tr>
+                    <tr>
+                      <td>The Villas</td>
+                      <td>R 860</td>
+                      <td>R 590</td>
+                      <td>R 1,450</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>
+                  Rates are per person sharing and room only. All meals are available at
+                  Avalon Springs Hotel and various food stalls. Should a guest wish to extend
+                  stay then same rate will apply for any extended dates – subject to availability.
+                </p>
+              </v-card-text>
+
+              <!-- TODO: Add a gallery -->
+            </v-card>
+
+            <v-card color="grey darken-4" class="mb-2">
+              <v-card-title class="deep-orange">
+                <div class="subheading">Little Sanctuary</div>
+                <v-spacer></v-spacer>
+                <v-btn small flat fab href="http://www.little-sanctuary.co.za/"><v-icon>public</v-icon></v-btn>
+              </v-card-title>
+              <v-card-text>
+                <p>
+                  Neighbouring the well-known Natural Hot Springs in Montagu,
+                  Little Sanctuary is an owner-run business offering a range
+                  of self-catering accommodation. Set on a 2.5 hectare private
+                  estate, the tranquil setting makes Little Sanctuary ideal for
+                  a romantic getaway for two, or to simply recharge those batteries.
+                </p>
+              </v-card-text>
+            </v-card>
+
+            <v-card color="grey darken-4" class="mb-2">
+              <v-card-title class="deep-orange">
+                <div class="subheading">Alternatives</div>
+                <v-spacer></v-spacer>
+                <v-btn small flat fab href="https://www.montagu.org.za/accommodation/"><v-icon>public</v-icon></v-btn>
+              </v-card-title>
+              <v-card-text>
+                <p>
+                  Visit the Montagu tourism website to find additional alternatives if you require.
+                </p>
+              </v-card-text>
+            </v-card>
+
+          </v-card-text>
+        </v-card>
+
+        <!-- Charity -->
+        <v-card id="charity" class="mb-4">
+          <v-card-title>
+            <div class="title">Charity</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <p>
+              Thanks to all who attended our 11th Rally, we were able to collect R35,000 for charity.
+              So far in 2017 we have spent R35,000. These funds will be used for a charity identified
+              by our rally committee and in standing with our commitment, will be used to purchase
+              tangible goods to the betterment of the selected charities. No cash will be handed over.
+              A full list of the selected charities and goods supplied will be available at our next rally.
+              We would also like to thank the companies that help us to help others by giving good discounts
+              on purchases.
+            </p>
+
+            <!-- St. Monica's Home -->
+            <!-- Huis Uitvlucht -->
+            <!-- Precious Jewels -->
+          </v-card-text>
+        </v-card>
+
+        <!-- Sponsors -->
+        <v-card id="sponsors" class="mb-4">
+          <v-card-title>
+            <div class="title">Sponsors</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <v-container fluid style="min-height: 0;" grid-list-sm>
+              <v-layout row wrap>
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.avalonsprings.co.za">
+                      <img src="images/sponsors/avalon-springs.jpg">
+                    </a>
+                    <span>Avalon Springs</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.touaregtents.co.za">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/touareg.jpg">
+                    </a>
+                    <span>Touareg Tents</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.boncourage.co.za">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/boncourage.jpg">
+                    </a>
+                    <span>Bon Courage</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.hd-tygervalley.co.za">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/hd.jpg">
+                    </a>
+                    <span>Harley-Davidson Tyger Valley</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.monsterenergy.com/za/en/home/">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/monster.jpg">
+                    </a>
+                    <span>Monster Energy</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.medway.co.za/">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/medway.jpg">
+                    </a>
+                    <span>Med Way</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="https://www.dreamvacs.com/">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2014/07/dreamvacationclub.jpg">
+                    </a>
+                    <span>Dream Vacation Club</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.psg.co.za/centurion-short-term">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2015/09/psg-konsult-logo-resized2.jpg">
+                    </a>
+                    <span>PSG Insure</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://topcopy.co.za/">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/TopCopy.jpg">
+                    </a>
+                    <span>Top Copy</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/RGJack.jpg">
+                    </a>
+                    <span>RG Jack &amp; Son</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/MikeScholtz.jpg">
+                    </a>
+                    <span>Mike Scholtz Electrical</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/Diesel-and-Creme-Logo-Final-IMG-20131105-WA0009.jpg">
+                    </a>
+                    <span>Diesel &amp; Crème</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/Dream.jpg">
+                    </a>
+                    <span>Dream Hotels &amp; Resorts</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/Copytype.jpg">
+                    </a>
+                    <span>Copytype</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="http://www.ashersons.co.za/">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2016/01/ashersons.jpg">
+                    </a>
+                    <span>Ashersons</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2017/02/Audiolens.jpg">
+                    </a>
+                    <span>Audiolens</span>
+                  </v-tooltip>
+                </v-flex>
+
+                <v-flex xs12 sm6 md4 lg3>
+                  <v-tooltip top>
+                    <a slot="activator" href="">
+                      <img src="http://route62rally.co.za/wp-content/uploads/2017/02/harleymoon.jpg">
+                    </a>
+                    <span>Harley Moon</span>
+                  </v-tooltip>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-card-text>
+        </v-card>
+
+        <!-- Contact -->
+        <v-card id="contact">
+          <v-card-title>
+            <div class="title">Contact</div>
+            <v-spacer></v-spacer>
+            <v-tooltip left>
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+                <v-icon>arrow_upward</v-icon>
+              </v-btn>
+              <span>Back to Top</span>
+            </v-tooltip>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-form v-model="contact.valid" action="/contacts" method="POST">
+            <v-card-text>
+              <input type="hidden" name="authenticity_token" :value="csrf">
+              <v-text-field
+                label="Name" name="name"
+                v-model="contact.name"
+                required :rules="[(v) => !!v || 'Please provide your name']"
+              ></v-text-field>
+              <v-text-field
+                label="E-mail" name="email"
+                v-model="contact.email"
+                required :rules="[(v) => !!v || 'Please provide a contact email address']"
+              ></v-text-field>
+              <v-text-field
+                label="Message" name="message"
+                v-model="contact.message"
+                required :rules="[(v) => v.length > 0 || 'Please provide a message']"
+              ></v-text-field>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn :disabled="!contact.valid" color="primary" type="submit">Send message</v-btn>
+          </v-form>
+        </v-card>
+      </v-container>
+    </v-content>
+  </v-app>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+<script>
+window.Vue = new Vue({
+  el: '#app',
+  created() {
+    this.csrf = document.querySelector("meta[name='csrf-token']").content
+  },
+  data: {
+    csrf: '',
+    flashes: {
+      <% flash.each do |key, message| %>
+      <%= key %>: true,
+      <% end %>
+    },
+    contact: {
+      valid: false,
+      name: '',
+      email: '',
+      message: ''
+    }
+  }
+})
+</script>
