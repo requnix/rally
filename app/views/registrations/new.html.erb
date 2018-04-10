@@ -1,8 +1,7 @@
 <div id="app">
   <v-app dark>
     <v-toolbar app>
-      <!-- TODO: Insert logo -->
-      <div>Route 62 Rally</div>
+      <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
       <v-btn flat href="/#about-event">About event</v-btn>
       <v-btn flat href="/#registration-info">Registration Info</v-btn>
@@ -29,13 +28,6 @@
         <v-card id="programme" class="mb-4">
           <v-card-title>
             <div class="title">Registration</div>
-            <v-spacer></v-spacer>
-            <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
-                <v-icon>arrow_upward</v-icon>
-              </v-btn>
-              <span>Back to Top</span>
-            </v-tooltip>
           </v-card-title>
           <v-divider></v-divider>
           <v-form v-model="valid" action="/registrations" method="POST">
