@@ -25,7 +25,7 @@
 
     <v-content id="top">
       <v-carousel height="669">
-        <v-carousel-item src="images/slider4-2017.jpg">
+        <v-carousel-item>
           <v-container fill-height>
             <v-layout column align-center justify-center>
               <!-- TODO: Vignette the image so the text is readable -->
@@ -38,21 +38,18 @@
       </v-carousel>
 
       <v-container>
-        <!-- Countdown -->
-        <v-card id="countdown" class="mb-4">
+        <v-card id="countdown" style="max-width: 640px; margin: 0 auto 24px;">
           <v-card-title>
-            <div>
-              <div class="display-3">Our 13th Rally Weekend</div>
-              <div class="title">14 - 17 February 2019, Montagu</div>
-            </div>
+            <div class="display-3">Our 13<sup>th</sup> Rally Weekend</div>
+            <div class="title">14 - 17 February 2019, Montagu</div>
           </v-card-title>
-          <!-- TODO: Embed the teaser video -->
-          <v-card-text>
-            <p>(click here to see the teaser video from 2015)</p>
-            <p>Registrations are closed!</p>
-          </v-card-text>
+          <!-- Teaser Video -->
+          <v-card-media>
+            <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </v-card-media>
           <!-- Countdown Timer -->
-          <v-card-text>
+          <v-card-text class="text-xs-center">
+            <div class="headline mb-3">Registrations are not yet open!</div>
             <div id="clockdiv">
               <div>
                 <span class="days"></span>
@@ -73,7 +70,9 @@
             </div>
           </v-card-text>
         </v-card>
+      </v-container>
 
+      <v-container>
         <!-- About Event -->
         <v-card id="about-event" class="mb-4">
           <v-card-title>
@@ -102,7 +101,9 @@
           </v-card-text>
           <!-- TODO: Add gallery -->
         </v-card>
+      </v-container>
 
+      <v-container>
         <!-- Registration Info -->
         <v-card id="registration-info" class="mb-4">
           <v-card-title>
@@ -151,7 +152,9 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+      </v-container>
 
+      <v-container>
         <v-card id="programme" class="mb-4">
           <v-card-title>
             <div class="title">Programme</div>
@@ -326,7 +329,9 @@
             <!-- <p><a href="files/programme.pdf">Click here to download a PDF of the programme.</a></p> -->
           </v-card-text>
         </v-card>
+      </v-container>
 
+      <v-container>
         <!-- Accommodation -->
         <v-card id="accommodation" class="mb-4">
           <v-card-title>
@@ -343,7 +348,7 @@
           <v-card-text>
 
             <v-card color="grey darken-4" class="mb-2">
-              <v-card-title class="deep-orange">
+              <v-card-title class="deep-orange darken-2">
                 <div class="subheading">Avalon Springs Resort</div>
                 <v-spacer></v-spacer>
                 <v-btn small flat fab href="mailto:debbie@avalonsprings.co.za"><v-icon>mail</v-icon></v-btn>
@@ -410,7 +415,7 @@
             </v-card>
 
             <v-card color="grey darken-4" class="mb-2">
-              <v-card-title class="deep-orange">
+              <v-card-title class="deep-orange darken-2">
                 <div class="subheading">Montagu Springs</div>
                 <v-spacer></v-spacer>
                 <v-btn small flat fab href="http://www.montagusprings.co.za/"><v-icon>public</v-icon></v-btn>
@@ -468,7 +473,7 @@
             </v-card>
 
             <v-card color="grey darken-4" class="mb-2">
-              <v-card-title class="deep-orange">
+              <v-card-title class="deep-orange darken-2">
                 <div class="subheading">Little Sanctuary</div>
                 <v-spacer></v-spacer>
                 <v-btn small flat fab href="http://www.little-sanctuary.co.za/"><v-icon>public</v-icon></v-btn>
@@ -485,7 +490,7 @@
             </v-card>
 
             <v-card color="grey darken-4" class="mb-2">
-              <v-card-title class="deep-orange">
+              <v-card-title class="deep-orange darken-2">
                 <div class="subheading">Alternatives</div>
                 <v-spacer></v-spacer>
                 <v-btn small flat fab href="https://www.montagu.org.za/accommodation/"><v-icon>public</v-icon></v-btn>
@@ -499,7 +504,9 @@
 
           </v-card-text>
         </v-card>
+      </v-container>
 
+      <v-container>
         <!-- Charity -->
         <v-card id="charity" class="mb-4">
           <v-card-title>
@@ -529,7 +536,9 @@
             <!-- Precious Jewels -->
           </v-card-text>
         </v-card>
+      </v-container>
 
+      <v-container>
         <!-- Sponsors -->
         <v-card id="sponsors" class="mb-4">
           <v-card-title>
@@ -702,7 +711,9 @@
             </v-container>
           </v-card-text>
         </v-card>
+      </v-container>
 
+      <v-container>
         <!-- Contact -->
         <v-card id="contact">
           <v-card-title>
