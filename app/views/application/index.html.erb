@@ -3,13 +3,13 @@
     <v-toolbar app>
       <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
-      <v-btn flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })">About event</v-btn>
-      <v-btn flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })">Registration Info</v-btn>
-      <v-btn flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })">Programme</v-btn>
-      <v-btn flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })">Accommodation</v-btn>
-      <v-btn flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })">Charity</v-btn>
-      <v-btn flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })">Sponsors</v-btn>
-      <v-btn flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })">Contact</v-btn>
+      <v-btn flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
+      <v-btn flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
+      <v-btn flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn>
+      <v-btn flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
+      <v-btn flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })" :color="section == 'charity' ? 'deep-orange' : 'white'">Charity</v-btn>
+      <v-btn flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })" :color="section == 'sponsors' ? 'deep-orange' : 'white'">Sponsors</v-btn>
+      <v-btn flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })" :color="section == 'contact' ? 'deep-orange' : 'white'">Contact</v-btn>
     </v-toolbar>
 
     <% flash.each do |key, message| %>
@@ -724,11 +724,41 @@
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+<script src="https://unpkg.com/scrollmonitor@1.2.4/scrollMonitor.js"></script>
 <script>
 window.Vue = new Vue({
   el: '#app',
   created() {
+    // Set Rails CSRF token
     this.csrf = document.querySelector("meta[name='csrf-token']").content
+  },
+  mounted() {
+    // Start the countdown timer
+    var deadline = new Date(2019, 2, 14, 8, 30)
+    initializeClock('clockdiv', deadline)
+
+    // Watch elements for scrolling
+    var watcher = scrollMonitor.create(document.getElementById('about-event'), -80);
+    watcher.enterViewport(() => this.section = 'about-event');
+    watcher.fullyEnterViewport(() => this.section = 'about-event');
+    watcher = scrollMonitor.create(document.getElementById('registration-info'), -80);
+    watcher.enterViewport(() => this.section = 'registration-info');
+    watcher.fullyEnterViewport(() => this.section = 'registration-info');
+    watcher = scrollMonitor.create(document.getElementById('programme'), -80);
+    watcher.enterViewport(() => this.section = 'programme');
+    watcher.fullyEnterViewport(() => this.section = 'programme');
+    watcher = scrollMonitor.create(document.getElementById('accommodation'), -80);
+    watcher.enterViewport(() => this.section = 'accommodation');
+    watcher.fullyEnterViewport(() => this.section = 'accommodation');
+    watcher = scrollMonitor.create(document.getElementById('charity'), -80);
+    watcher.enterViewport(() => this.section = 'charity');
+    watcher.fullyEnterViewport(() => this.section = 'charity');
+    watcher = scrollMonitor.create(document.getElementById('sponsors'), -80);
+    watcher.enterViewport(() => this.section = 'sponsors');
+    watcher.fullyEnterViewport(() => this.section = 'sponsors');
+    watcher = scrollMonitor.create(document.getElementById('contact'), -80);
+    watcher.enterViewport(() => this.section = 'contact');
+    watcher.fullyEnterViewport(() => this.section = 'contact');
   },
   data: {
     csrf: '',
@@ -737,6 +767,7 @@ window.Vue = new Vue({
       <%= key %>: true,
       <% end %>
     },
+    section: null,
     contact: {
       valid: false,
       name: '',
@@ -745,7 +776,4 @@ window.Vue = new Vue({
     }
   }
 })
-
-var deadline = new Date(2019, 2, 14, 8, 30)
-initializeClock('clockdiv', deadline)
 </script>
