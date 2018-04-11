@@ -1,15 +1,28 @@
 <div id="app">
   <v-app dark>
-    <v-toolbar app>
+    <v-toolbar app v-if="$vuetify.breakpoint.smAndUp">
       <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
-      <v-btn flat href="/#about-event">About event</v-btn>
-      <v-btn flat href="/#registration-info">Registration Info</v-btn>
-      <v-btn flat href="/#programme">Programme</v-btn>
-      <v-btn flat href="/#accommodation">Accommodation</v-btn>
-      <v-btn flat href="/#charity">Charity</v-btn>
-      <v-btn flat href="/#sponsors">Sponsors</v-btn>
-      <v-btn flat href="/#contact">Contact</v-btn>
+      <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
+        <v-btn flat href="/#about-event">About event</v-btn>
+        <v-btn flat href="/#registration-info">Registration Info</v-btn>
+        <v-btn flat href="/#programme">Programme</v-btn>
+        <v-btn flat href="/#accommodation">Accommodation</v-btn>
+        <v-btn flat href="/#charity">Charity</v-btn>
+        <v-btn flat href="/#sponsors">Sponsors</v-btn>
+        <v-btn flat href="/#contact">Contact</v-btn>
+      </v-toolbar-items>
+      <v-toolbar-items v-else>
+        <v-btn small flat href="/">Back</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+    <v-toolbar app v-else>
+      <v-layout column align-center>
+        <%= image_tag 'logowhiteresized.png', width: '300px', class: 'mb-auto' %>
+      </v-layout>
+      <v-layout column align-center slot="extension">
+        <v-btn small flat href="/" style="width: 100%">Back</v-btn>
+      </v-layout>
     </v-toolbar>
 
     <% flash.each do |key, message| %>

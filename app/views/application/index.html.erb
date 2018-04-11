@@ -1,6 +1,6 @@
 <div id="app">
   <v-app dark>
-    <v-toolbar app>
+    <v-toolbar app v-if="$vuetify.breakpoint.smAndUp">
       <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
       <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
@@ -14,7 +14,7 @@
       </v-toolbar-items>
       <v-toolbar-items v-if="this.$vuetify.breakpoint.mdAndDown">
         <v-menu open-on-hover offset-y>
-          <v-btn flat slot="activator">
+          <v-btn small flat slot="activator">
             {{ section ? section.replace('-', ' ') : 'Home' }}
             <v-icon>keyboard_arrow_down</v-icon>
           </v-btn>
@@ -25,6 +25,24 @@
           </v-list>
         </v-menu>
       </v-toolbar-items>
+    </v-toolbar>
+    <v-toolbar app v-else>
+      <v-layout column align-center>
+        <%= image_tag 'logowhiteresized.png', width: '300px', class: 'mb-auto' %>
+      </v-layout>
+      <v-layout column align-center slot="extension">
+        <v-menu full-width offset-y style="width: 100%">
+          <v-btn flat slot="activator" style="width: 100%">
+            {{ section ? section.replace('-', ' ') : 'Home' }}
+            <v-icon>keyboard_arrow_down</v-icon>
+          </v-btn>
+          <v-list>
+            <v-list-tile v-for="nav in navOptions" :key="nav.value" @click="$vuetify.goTo(`#${nav.value}`, { offset: -120 })">
+              <v-list-tile-title>{{ nav.text }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </v-layout>
     </v-toolbar>
 
     <% flash.each do |key, message| %>
@@ -94,7 +112,7 @@
             <div class="title">About the Event</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
@@ -125,7 +143,7 @@
             <div class="title">Registration Info</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
@@ -175,7 +193,7 @@
             <div class="title">Programme</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
@@ -353,7 +371,7 @@
             <div class="title">Accommodation</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
@@ -528,7 +546,7 @@
             <div class="title">Charity</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
@@ -560,7 +578,7 @@
             <div class="title">Sponsors</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
@@ -701,7 +719,7 @@
             <div class="title">Contact</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
-              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: -60 })">
+              <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
                 <v-icon>arrow_upward</v-icon>
               </v-btn>
               <span>Back to Top</span>
