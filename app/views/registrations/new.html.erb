@@ -35,8 +35,20 @@
       <v-container>
         <v-card id="programme" class="mb-4">
           <v-card-title>
-            <div class="title">Registration</div>
+            <div class="title">Online Registration Form</div>
           </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <p>
+              The registration fee is R 750 per participant.
+              This includes a Rally Pack, 3 days of fun and Saturday night buffet meal.
+            </p>
+
+            <ul class="red--text text--darken-1 px-3 mb-2 subheading">
+              <li>Please note that Rider and Pillion both have to register separately and pay separately.</li>
+              <li>Please note that this rally is open to Harley-Davidson riders and pillions ONLY.</li>
+            </ul>
+          </v-card-text>
           <v-divider></v-divider>
           <v-form v-model="valid" action="/registrations" method="POST" ref="form">
             <v-card-text>
