@@ -38,7 +38,7 @@
             <div class="title">Registration</div>
           </v-card-title>
           <v-divider></v-divider>
-          <v-form v-model="valid" action="/registrations" method="POST">
+          <v-form v-model="valid" action="/registrations" method="POST" ref="form">
             <v-card-text>
               <input type="hidden" name="authenticity_token" :value="csrf">
 
@@ -108,6 +108,7 @@
                 v-model="registration.shirt"
                 :items="['Small', 'Medium', 'Large', 'X-Large', '2X-Large', '3X-Large', '4X-Large']"
                 required :rules="[(v) => !!v || 'You need to pick a shirt size']"
+                hint="T-shirt sizes are Unisex sizes" persistent-hint
               ></v-select>
               <input type="hidden" name="shirt_size" :value="registration.shirt">
 
@@ -127,6 +128,39 @@
               <input type="hidden" name="terms_and_conditions" :value="registration.terms">
             </v-card-text>
             <v-card-actions>
+              <v-dialog fullscreen v-model="showingTerms">
+                <v-btn flat color="warning" slot="activator">Terms and Conditions</v-btn>
+                <v-card>
+                  <v-card-title>
+                    <div>
+                      <div class="headline">Route 62 Rally 2019</div>
+                      <div class="subheading">INDEMNITY / WAIVER OF LIABILITY</div>
+                    </div>
+                  </v-card-title>
+                  <v-card-text>
+                    <p class="title warning--text">READ BEFORE REGISTERING ONLINE OR SUBMITTING YOUR ENTRY</p>
+                    <p>This form provides for the furnishing of particulars and an indemnity/waiver of liability by every person participating or involved in whatever capacity in the events and activities during the ROUTE 62 RALLY in and around MONTAGU during the period 14 – 17 FEBRUARY 2019 to be conducted by the FREE CHAPTER CAPE TOWN (“Event”), and the person who furnishes his/her particulars and signs this Form (‘the Participant”) thereby declares, by doing so, the following:</p>
+                    <p>
+                      That the Participant fully acknowledges and understands the risks and dangers inherent in motorcycling, acknowledges that he/she has chosen out of his/her own free will without any undue influence to voluntarily participate in the Event and expressly agrees to assume the entire risk of his/her participation therein;<br>
+                      That the Participant hereby releases, indemnifies and holds harmless the Free Chapter/ Avalon Springs Resort in relation to the Event, Free Chapter’s respective officers, directors and any member thereof participating in the Event (all hereinafter jointly and severally referred to as the “Released Parties”) from:
+                    </p>
+
+                    <ol class="px-3 mb-2">
+                      <li>any claims or suits which the Participant has or may later have relating to his/her person (including paralysis or death) and/or property or any costs incurred or damages suffered by the Participant, whether or not such claims, suits, costs or damages result from negligence (except gross negligence and wilful intent) on the part of any or all of the Released Parties arising from, or in connection with, the participation in whatever capacity in the Event, and the Participant assumes all risks of injury and damage to his/her person and property arising, directly or indirectly, from the conduct of the Event; or</li>
+                      <li>any act or omission arising from, or in connection with, the conditions, qualifications, instructions, rules or procedures under which the Event is conducted by anyone of the Released Parties; or</li>
+                      <li>any criminal or civil liability imposed upon a Released Party arising, directly or indirectly, from any act or omission by the Participant.</li>
+                      <li>That if a minor or mentally incapacitated person is to participate in the Ride, then the person signing on behalf or assisting any of the aforesaid persons, by furnishing particulars and appending a signature, further agrees to take full responsibility for the minor’s or mentally incapacitated person’s participation in the Event. The person thus signing hereby on behalf of the minor or mentally incapacitated person releases, indemnifies and holds harmless the Released Parties on the same basis set out in clause 2 above and to the extent not legally possible, hereby indemnifies and holds harmless the Released Parties against any such claim or suit by the minor or mentally incapacitated person, costs incurred or damages suffered by the minor or mentally incapacitated person arising from, or in connection with, the participation of the minor or mentally incapacitated person in whatever capacity in the Event.</li>
+                    </ol>
+
+                    <p>That he/she acknowledges and consents to photographs being taken and video material recorded during the Event and furthermore that these photographs and/or video material containing image/s of any Participant be used in various publications, publicity material, posters and internet sites.</p>
+
+                    <p class="title warning--text">BY SUBMITTING THIS REGISTRATION ELECTRONICALLY IT WILL BE DEEMED THAT YOU HAVE READ AND ACCEPT THIS INDEMNITY/WAIVER OF LIABILITY</p>
+                  </v-card-text>
+                  <v-card-actions><v-spacer></v-spacer>
+                    <v-btn color="deep-orange" @click="showingTerms = false">Dismiss</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
               <v-spacer></v-spacer>
               <v-btn :disabled="!valid" color="primary" type="submit">Register as a {{ registration.rider ? 'Rider' : 'Pillion' }}</v-btn>
           </v-form>
@@ -166,7 +200,8 @@ window.Vue = new Vue({
       shirt: '<%= @registration.shirt_size || 'Large' %>',
       payment: '<%= @registration.payment_method || 'EFT (Electronic Fund Transfer)' %>',
       terms: false
-    }
+    },
+    showingTerms: false
   }
 })
 </script>
