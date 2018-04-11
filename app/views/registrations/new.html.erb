@@ -26,14 +26,9 @@
     </v-toolbar>
 
     <% flash.each do |key, message| %>
-    <v-dialog v-model="flashes.<%= key %>" max-width="320px">
-      <v-card>
-        <v-card-text><%= message %></v-card-text>
-        <v-card-actions class="text-xs-center">
-          <v-btn color="deep-orange" @click="flashes.<%= key %> = false">OK</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <v-alert type="<%= key %>" :value="true">
+      <%= message %>
+    </v-alert>
     <% end %>
 
     <v-content id="top">
