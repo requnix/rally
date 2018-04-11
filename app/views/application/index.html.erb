@@ -3,13 +3,28 @@
     <v-toolbar app>
       <%= image_tag 'logowhiteresized.png' %>
       <v-spacer></v-spacer>
-      <v-btn flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
-      <v-btn flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
-      <v-btn flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn>
-      <v-btn flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
-      <v-btn flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })" :color="section == 'charity' ? 'deep-orange' : 'white'">Charity</v-btn>
-      <v-btn flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })" :color="section == 'sponsors' ? 'deep-orange' : 'white'">Sponsors</v-btn>
-      <v-btn flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })" :color="section == 'contact' ? 'deep-orange' : 'white'">Contact</v-btn>
+      <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
+        <v-btn small flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
+        <v-btn small flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
+        <v-btn small flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn>
+        <v-btn small flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
+        <v-btn small flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })" :color="section == 'charity' ? 'deep-orange' : 'white'">Charity</v-btn>
+        <v-btn small flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })" :color="section == 'sponsors' ? 'deep-orange' : 'white'">Sponsors</v-btn>
+        <v-btn small flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })" :color="section == 'contact' ? 'deep-orange' : 'white'">Contact</v-btn>
+      </v-toolbar-items>
+      <v-toolbar-items v-if="this.$vuetify.breakpoint.mdAndDown">
+        <v-menu open-on-hover offset-y>
+          <v-btn flat slot="activator">
+            {{ section ? section.replace('-', ' ') : 'Home' }}
+            <v-icon>keyboard_arrow_down</v-icon>
+          </v-btn>
+          <v-list>
+            <v-list-tile v-for="nav in navOptions" :key="nav.value" @click="$vuetify.goTo(`#${nav.value}`, { offset: -80 })">
+              <v-list-tile-title>{{ nav.text }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </v-toolbar-items>
     </v-toolbar>
 
     <% flash.each do |key, message| %>
@@ -38,7 +53,7 @@
       </v-carousel>
 
       <v-container>
-        <v-card id="countdown" style="max-width: 640px; margin: 0 auto 24px;">
+        <v-card id="countdown" class="mx-auto mb-3" style="max-width: 640px">
           <v-card-title>
             <div class="display-3">Our 13<sup>th</sup> Rally Weekend</div>
             <div class="title">14 - 17 February 2019, Montagu</div>
@@ -768,11 +783,25 @@ window.Vue = new Vue({
       <% end %>
     },
     section: null,
+    navOptions: [
+      { text: 'About Event', value: 'about-event' },
+      { text: 'Registration Info', value: 'registration-info' },
+      { text: 'Programme', value: 'programme' },
+      { text: 'Accommodation', value: 'accommodation' },
+      { text: 'Charity', value: 'charity' },
+      { text: 'Sponsors', value: 'sponsors' },
+      { text: 'Contact', value: 'contact' }
+    ],
     contact: {
       valid: false,
       name: '',
       email: '',
       message: ''
+    }
+  },
+  methods: {
+    scroll(id) {
+      this.$vuetify.goTo(`#${id}`, { offset: -80 })
     }
   }
 })
