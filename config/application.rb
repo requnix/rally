@@ -27,5 +27,10 @@ module Rally
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Default URL options for mailers
+    # TODO: Change this once the domain changes
+    config.action_mailer.default_url_options = { host: 'route62.herokuapp.com' }
+    config.action_mailer.asset_host = 'https://route62.herokuapp.com'
   end
 end
