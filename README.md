@@ -8,10 +8,10 @@
 * Add a gallery for each of the accommodation items.
 * Update the charity section with charity information from 2018.
 * Update the sponsor list to reflect the current sponsors.
-* Create the emails that have to go out on contact messages and bookings.
 * Set up the mails to send from somewhere.
 * Update the prices of the venues if they’ve changed for next year.
 
 ### Done
 
 * Change the navigation for smaller screens to a drop down menu
+* Create the emails that have to go out on contact messages and bookings.
