@@ -6,9 +6,9 @@
       <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
         <v-btn small flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
         <v-btn small flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
-        <v-btn small flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn>
+        <!-- <v-btn small flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn> -->
         <v-btn small flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
-        <v-btn small flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })" :color="section == 'charity' ? 'deep-orange' : 'white'">Charity</v-btn>
+        <!-- <v-btn small flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })" :color="section == 'charity' ? 'deep-orange' : 'white'">Charity</v-btn> -->
         <v-btn small flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })" :color="section == 'sponsors' ? 'deep-orange' : 'white'">Sponsors</v-btn>
         <v-btn small flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })" :color="section == 'contact' ? 'deep-orange' : 'white'">Contact</v-btn>
       </v-toolbar-items>
@@ -197,7 +197,7 @@
             <p><strong>On-site Registration:</strong> Registration can be done on-site during the rally but does not include a t-shirt and pin which are pre-made based on pre-registration.</p>
             <p>Please note: Check-ins on Thursday, February 14, and Friday, February 15, at main gate will close at 6.00pm. Should you be arriving after 6pm please contact Ammi at <a class="deep-orange--text" href="mailto:ammi@iafrica.com">ammi@iafrica.com</a> to arrange for late arrival check-in.</p>
           </v-card-text>
-          <v-card-actions>
+          <v-card-actions v-if="false">
             <v-btn color="deep-orange" href="/registrations/new?rider=true">
               Register as a Rider
             </v-btn>
@@ -209,7 +209,7 @@
       </v-container>
 
       <v-container>
-        <v-card id="programme" class="mb-4">
+        <v-card id="programme" class="mb-4" v-if="false">
           <v-card-title>
             <div class="title">Programme</div>
             <v-spacer></v-spacer>
@@ -562,7 +562,7 @@
 
       <v-container>
         <!-- Charity -->
-        <v-card id="charity" class="mb-4">
+        <v-card id="charity" class="mb-4" v-if="false">
           <v-card-title>
             <div class="title">Charity</div>
             <v-spacer></v-spacer>
