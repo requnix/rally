@@ -57,13 +57,34 @@
     <% end %>
 
     <v-content id="top">
-      <v-carousel height="669">
-        <v-carousel-item>
+      <v-carousel hide-controls hide-delimiters>
+        <v-carousel-item src="<%= image_url 'logo-large.jpg' %>"></v-carousel-item>
+
+        <v-carousel-item src="<%= image_url 'gallery/HDI1899.JPG' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <!-- TODO: Vignette the image so the text is readable -->
               <h4 class="title white--text">14 FEB - 17 FEB 2019</h4>
               <h1 class="display-3 white--text">JOIN US IN 2019</h1>
+              <h4 class="title white--text">MONTAGU</h4>
+            </v-layout>
+          </v-container>
+        </v-carousel-item>
+
+        <v-carousel-item src="<%= image_url 'gallery/HDI1838.JPG' %>">
+          <v-container fill-height>
+            <v-layout column align-center justify-center>
+              <h4 class="title white--text">14 FEB - 17 FEB 2019</h4>
+              <h1 class="display-3 white--text">READY FOR ACTION</h1>
+              <h4 class="title white--text">MONTAGU</h4>
+            </v-layout>
+          </v-container>
+        </v-carousel-item>
+
+        <v-carousel-item src="<%= image_url 'gallery/HDI0843.JPG' %>">
+          <v-container fill-height>
+            <v-layout column align-center justify-center>
+              <h4 class="title white--text">14 FEB - 17 FEB 2019</h4>
+              <h1 class="display-3 white--text">RELAX &amp; REJUVENATE</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
           </v-container>
@@ -733,9 +754,6 @@
     </v-content>
   </v-app>
 </div>
-
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
 <script src="https://unpkg.com/scrollmonitor@1.2.4/scrollMonitor.js"></script>
 <script>
 window.Vue = new Vue({
@@ -746,7 +764,7 @@ window.Vue = new Vue({
   },
   mounted() {
     // Start the countdown timer
-    var deadline = new Date(2019, 2, 14, 8, 30)
+    var deadline = new Date(2019, 1, 14, 10, 00)
     initializeClock('clockdiv', deadline)
 
     // Watch elements for scrolling

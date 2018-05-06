@@ -1,5 +1,8 @@
 {
   "name": "rally",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vuetify": "^1.0.17"
+  }
 }
