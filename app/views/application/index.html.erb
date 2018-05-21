@@ -430,11 +430,11 @@
                     </tr>
                     <tr>
                       <td>Double sharing</td>
-                      <td>R 450 per person</td>
+                      <td>R 495 per person</td>
                     </tr>
                     <tr>
                       <td>Triple or more sharing</td>
-                      <td>R 400 per person</td>
+                      <td>R 450 per person</td>
                     </tr>
                   </tbody>
                 </table>
@@ -483,35 +483,35 @@
                   <thead>
                     <tr>
                       <th class="text-xs-left">Description</th>
+                      <th class="text-xs-left">Single</th>
                       <th class="text-xs-left">Two people</th>
                       <th class="text-xs-left">Three or more</th>
-                      <th class="text-xs-left">Single</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>Small Pletts</td>
-                      <td>R 518</td>
+                      <td>R 950</td>
+                      <td>R 545</td>
                       <td>N/A</td>
-                      <td>R 900</td>
                     </tr>
                     <tr>
                       <td>Large Pletts</td>
-                      <td>R 570</td>
-                      <td>R 390</td>
-                      <td>R 990</td>
+                      <td>R 1,090</td>
+                      <td>R 595</td>
+                      <td>R 400</td>
                     </tr>
                     <tr>
                       <td>Josmont Heights &amp; Golden Terraces</td>
-                      <td>R 685</td>
-                      <td>R 460</td>
-                      <td>R 1,100</td>
+                      <td>R 1,300</td>
+                      <td>R 720</td>
+                      <td>R 480</td>
                     </tr>
                     <tr>
                       <td>The Villas</td>
-                      <td>R 860</td>
-                      <td>R 590</td>
                       <td>R 1,450</td>
+                      <td>R 895</td>
+                      <td>R 600</td>
                     </tr>
                   </tbody>
                 </table>
@@ -521,6 +521,29 @@
                   Avalon Springs Hotel and various food stalls. Should a guest wish to extend
                   stay then same rate will apply for any extended dates – subject to availability.
                 </p>
+
+                <v-card>
+                  <v-card-title>
+                    <div>
+                      <div class="title">Louise</div>
+                      <!-- <div>Front Office Manager</div> -->
+                    </div>
+                  </v-card-title>
+                  <v-list>
+                    <v-list-tile avatar href="tel:+27236141050">
+                      <v-list-tile-avatar><v-icon>contact_phone</v-icon></v-list-tile-avatar>
+                      <v-list-tile-content>
+                        <v-list-tile-title>023 614 1050</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile avatar href="mailto:msprings@singergroup.co.za">
+                      <v-list-tile-avatar><v-icon>contact_mail</v-icon></v-list-tile-avatar>
+                      <v-list-tile-content>
+                        <v-list-tile-title>msprings@singergroup.co.za</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                  </v-list>
+                </v-card>
               </v-card-text>
 
               <!-- TODO: Add a gallery -->
@@ -774,15 +797,15 @@ window.Vue = new Vue({
     watcher = scrollMonitor.create(document.getElementById('registration-info'), -80);
     watcher.enterViewport(() => this.section = 'registration-info');
     watcher.fullyEnterViewport(() => this.section = 'registration-info');
-    watcher = scrollMonitor.create(document.getElementById('programme'), -80);
-    watcher.enterViewport(() => this.section = 'programme');
-    watcher.fullyEnterViewport(() => this.section = 'programme');
+    // watcher = scrollMonitor.create(document.getElementById('programme'), -80);
+    // watcher.enterViewport(() => this.section = 'programme');
+    // watcher.fullyEnterViewport(() => this.section = 'programme');
     watcher = scrollMonitor.create(document.getElementById('accommodation'), -80);
     watcher.enterViewport(() => this.section = 'accommodation');
     watcher.fullyEnterViewport(() => this.section = 'accommodation');
-    watcher = scrollMonitor.create(document.getElementById('charity'), -80);
-    watcher.enterViewport(() => this.section = 'charity');
-    watcher.fullyEnterViewport(() => this.section = 'charity');
+    // watcher = scrollMonitor.create(document.getElementById('charity'), -80);
+    // watcher.enterViewport(() => this.section = 'charity');
+    // watcher.fullyEnterViewport(() => this.section = 'charity');
     watcher = scrollMonitor.create(document.getElementById('sponsors'), -80);
     watcher.enterViewport(() => this.section = 'sponsors');
     watcher.fullyEnterViewport(() => this.section = 'sponsors');
@@ -801,9 +824,9 @@ window.Vue = new Vue({
     navOptions: [
       { text: 'About Event', value: 'about-event' },
       { text: 'Registration Info', value: 'registration-info' },
-      { text: 'Programme', value: 'programme' },
+      // { text: 'Programme', value: 'programme' },
       { text: 'Accommodation', value: 'accommodation' },
-      { text: 'Charity', value: 'charity' },
+      // { text: 'Charity', value: 'charity' },
       { text: 'Sponsors', value: 'sponsors' },
       { text: 'Contact', value: 'contact' }
     ],
