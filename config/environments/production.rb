@@ -90,7 +90,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'route62.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     address: 'mail.hover.com',
-    port: 465,
+    port: 25,
     user_name: 'route62rally@freechapter.capetown',
     password: 'branch-usual-recreant-athletic'
   }
