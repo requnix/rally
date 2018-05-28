@@ -89,9 +89,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'route62.herokuapp.com' }
   config.action_mailer.smtp_settings = {
-    address: 'smtp-relay.sendinblue.com',
-    port: 587,
-    user_name: 'route62rally@gmail.com',
-    password: 'fILOUXAPV4MgTvrh'
+    address: 'mail.hover.com',
+    port: 465,
+    user_name: 'route62rally@freechapter.capetown',
+    password: 'branch-usual-recreant-athletic'
   }
 end
