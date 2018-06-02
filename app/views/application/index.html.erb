@@ -492,7 +492,7 @@
               <v-divider></v-divider>
               <!-- Gallery -->
               <v-dialog v-model="viewingAvalonGallery" max-width="800px">
-                <v-carousel style="max-height: 600px" :cycle="false" interval="60000" v-model="aboutGalleryIndex">
+                <v-carousel style="max-height: 600px" :cycle="false" interval="60000" v-model="avalonGalleryIndex">
                   <v-carousel-item
                     v-for="(src, i) in galleries.avalon"
                     :key="`avalon-${i}`"
@@ -590,8 +590,27 @@
                   </v-list>
                 </v-card>
               </v-card-text>
-
-              <!-- TODO: Add a gallery -->
+              <v-divider></v-divider>
+              <!-- Gallery -->
+              <v-dialog v-model="viewingMontaguGallery" max-width="800px">
+                <v-carousel style="max-height: 600px" :cycle="false" interval="60000" v-model="montaguGalleryIndex">
+                  <v-carousel-item
+                    v-for="(src, i) in galleries.montagu"
+                    :key="`montagu-${i}`"
+                    :src="src"
+                  />
+                </v-carousel>
+              </v-dialog>
+              <v-card-text>
+                <v-layout class="row" style="overflow-x: scroll; height: 135px">
+                  <img
+                    v-for="image, index in galleries.montagu"
+                    :src="image"
+                    height="120px"
+                    class="mx-1"
+                    @click="galleryToggle('montagu', index)"
+                  />
+                </v-layout>
             </v-card>
 
             <v-card color="grey darken-4" class="mb-2">
@@ -880,9 +899,12 @@ window.Vue = new Vue({
     aboutGalleryIndex: 0,
     viewingAvalonGallery: false,
     avalonGalleryIndex: 0,
+    viewingMontaguGallery: false,
+    montaguGalleryIndex: 0,
     galleries: {
       about: <%= raw Dir.glob('app/assets/images/gallery/about/*').map { |p| image_url p.split('/')[-3..-1].join('/') }.shuffle %>,
-      avalon: <%= raw Dir.glob('app/assets/images/gallery/avalon/*').map { |p| image_url p.split('/')[-3..-1].join('/') }.shuffle %>
+      avalon: <%= raw Dir.glob('app/assets/images/gallery/avalon/*').map { |p| image_url p.split('/')[-3..-1].join('/') }.shuffle %>,
+      montagu: <%= raw Dir.glob('app/assets/images/gallery/montagu/*').map { |p| image_url p.split('/')[-3..-1].join('/') }.shuffle %>
     },
     contact: {
       valid: false,
@@ -905,8 +927,11 @@ window.Vue = new Vue({
           this.viewingAvalonGallery = true
           this.avalonGalleryIndex = index
           break;
+        case 'montagu':
+          this.viewingMontaguGallery = true
+          this.montaguGalleryIndex = index
+          break;
       }
-      console.log(gallery, index)
     }
   }
 })
