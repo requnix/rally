@@ -157,7 +157,28 @@
             <p>The rally site is well served by local wine estates, a tattoo artist, a Harley dealer &amp; workshop, Sushi bar,  bike wash, food stalls and more. Each evening the roar of Harleys is replaced by the rock bands that ensure a pulsating rhythm continues long into the night. For those wanting a more leisurely pace, there are the soothing waters of the <strong>hot springs and plunge pools</strong>.</p>
             <p>It is more blessed to give than to receive and funds are raised for <strong>charities</strong> serving the local communities. It is always a happy weekend followed by sad farewells to new friends and old with the hope of meeting again next year at the <strong>Route62 Rally</strong>.</p>
           </v-card-text>
-          <!-- TODO: Add gallery -->
+          <v-divider></v-divider>
+          <!-- Gallery -->
+          <v-dialog v-model="viewingAboutGallery" max-width="800px">
+            <v-carousel style="max-height: 600px" :cycle="false" interval="60000" v-model="aboutGalleryIndex">
+              <v-carousel-item
+                v-for="(src, i) in galleries.about"
+                :key="`about-${i}`"
+                :src="src"
+              />
+            </v-carousel>
+          </v-dialog>
+          <v-card-text>
+            <v-layout class="row" style="overflow-x: scroll; height: 135px">
+              <img
+                v-for="image, index in galleries.about"
+                :src="image"
+                height="120px"
+                class="mx-1"
+                @click="galleryToggle('about', index)"
+              />
+            </v-layout>
+          </v-card-text>
         </v-card>
       </v-container>
 
@@ -834,6 +855,12 @@ window.Vue = new Vue({
       { text: 'Sponsors', value: 'sponsors' },
       { text: 'Contact', value: 'contact' }
     ],
+    // Galleries
+    viewingAboutGallery: false,
+    aboutGalleryIndex: 0,
+    galleries: {
+      about: <%= raw Dir.glob('app/assets/images/gallery/about/*').map { |p| image_url p.split('/')[-3..-1].join('/') }.shuffle %>
+    },
     contact: {
       valid: false,
       name: '',
@@ -844,6 +871,15 @@ window.Vue = new Vue({
   methods: {
     scroll(id) {
       this.$vuetify.goTo(`#${id}`, { offset: -80 })
+    },
+    galleryToggle(gallery, index) {
+      switch (gallery) {
+        case 'about':
+          this.viewingAboutGallery = true
+          this.aboutGalleryIndex = index
+          break;
+      }
+      console.log(gallery, index)
     }
   }
 })
