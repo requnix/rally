@@ -103,7 +103,11 @@
           </v-card-media>
           <!-- Countdown Timer -->
           <v-card-text class="text-xs-center">
-            <div class="headline mb-3">Registrations are not yet open!</div>
+            <div class="display-1 mb-3">
+              <a @click="scroll('registration-info')" class="deep-orange--text">
+                Registrations are now open!
+              </a>
+            </div>
             <div id="clockdiv">
               <div>
                 <span class="days"></span>
@@ -197,7 +201,7 @@
             <p><strong>On-site Registration:</strong> Registration can be done on-site during the rally but does not include a t-shirt and pin which are pre-made based on pre-registration.</p>
             <p>Please note: Check-ins on Thursday, February 14, and Friday, February 15, at main gate will close at 6.00pm. Should you be arriving after 6pm please contact Ammi at <a class="deep-orange--text" href="mailto:ammi@iafrica.com">ammi@iafrica.com</a> to arrange for late arrival check-in.</p>
           </v-card-text>
-          <v-card-actions v-if="false">
+          <v-card-actions>
             <v-btn color="deep-orange" href="/registrations/new?rider=true">
               Register as a Rider
             </v-btn>
