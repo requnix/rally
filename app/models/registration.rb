@@ -10,6 +10,6 @@ class Registration < ApplicationRecord
 
   after_create :generate_reference
   def generate_reference
-    update reference: "R62-#{'%03d' % (id % 1000)}-#{first_name.upcase[0..2]}", year: 2019
+    update reference: "#{'%03d' % (id % 1000)}#{first_name.upcase[0..2]}", year: 2019
   end
 end
