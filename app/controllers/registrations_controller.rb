@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.create registration_params.except(:authenticity_token)
     if @registration.valid?
-      RegistrationsMailer.notify(@registration).deliver
+      RegistrationsMailer.notify(@registration).deliver!
       flash[:notice] = "Your registration has been submitted. We're sending you an email with the payment details and your reference number now."
       redirect_to '/'
     else
