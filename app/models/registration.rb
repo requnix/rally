@@ -1,8 +1,9 @@
 class Registration < ApplicationRecord
-  validates_presence_of :rider, :first_name, :last_name,
+  validates_presence_of :first_name, :last_name,
                         :residential_address, :email, :contact_number,
                         :motorcycle, :shirt_size, :payment_method
 
+  validates_inclusion_of :rider, in: [true, false]
   validates_inclusion_of :shirt_size, in: %w(Small Medium Large X-Large 2X-Large 3X-Large 4X-Large)
   validates_inclusion_of :payment_method, in: ['EFT (Electronic Fund Transfer)', 'Cash Deposit']
   validates_acceptance_of :terms_and_conditions
