@@ -52,4 +52,7 @@ ActiveAdmin.register Registration do
                 :payment_method, :terms_and_conditions,
                 :authenticity_token, :year
 
+  # Excel configuration
+  config.xls_builder.header_format = { weight: :bold }
+  config.xls_builder.delete_columns :id, :created_at, :updated_at
 end

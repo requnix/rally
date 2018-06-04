@@ -11,6 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 
 gem 'activeadmin'
+gem 'activeadmin-xls'
 gem 'devise'
 gem 'bcrypt'
 
