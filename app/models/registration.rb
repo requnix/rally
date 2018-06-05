@@ -1,7 +1,8 @@
 class Registration < ApplicationRecord
   validates_presence_of :first_name, :last_name,
                         :residential_address, :email, :contact_number,
-                        :motorcycle, :shirt_size, :payment_method
+                        :shirt_size, :payment_method
+  validates_presence_of :motorcycle, if: :rider
 
   validates_inclusion_of :rider, in: [true, false]
   validates_inclusion_of :shirt_size, in: %w(Small Medium Large X-Large 2X-Large 3X-Large 4X-Large)
