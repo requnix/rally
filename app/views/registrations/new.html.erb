@@ -78,17 +78,17 @@
                 required :rules="[(v) => !!v || 'Please provide a contact email address']"
               ></v-text-field>
 
-              <v-text-field
+              <v-textarea
                 label="Residential Address" name="residential_address"
-                v-model="registration.residential" multi-line auto-grow
+                v-model="registration.residential" auto-grow
                 required :rules="[(v) => v.length > 0 || 'Please provide an address']"
-              ></v-text-field>
+              ></v-textarea>
 
-              <v-text-field
+              <v-textarea
                 label="Postal Address" name="postal_address"
-                v-model="registration.postal" multi-line auto-grow
+                v-model="registration.postal" auto-grow
                 hint="Leave this blank if it is the same as the residential address"
-              ></v-text-field>
+              ></v-textarea>
 
               <v-text-field
                 label="Contact Number" name="contact_number"

@@ -1,3 +1,3 @@
 //= require countdown
-//= require vue/dist/vue
-//= require vuetify/dist/vuetify
+//= require vue/dist/vue.min
+//= require vuetify/dist/vuetify.min
