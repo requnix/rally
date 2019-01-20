@@ -1,18 +1,21 @@
 class RegistrationsController < ApplicationController
   def new
     @registration = Registration.new rider: params[:rider] != 'false'
+    flash.now[:warning] = "Registrations are now closed! On-site registrations are available, but excludes a t-shirt, pin and rally pack."
   end
 
   def create
-    @registration = Registration.create registration_params.except(:authenticity_token)
-    if @registration.valid?
-      RegistrationsMailer.notify(@registration).deliver
-      flash[:notice] = "Your registration has been submitted. We're sending you an email with the payment details and your reference number now."
+      flash[:notice] = "Registrations are now closed! On-site registrations are available, but excludes a t-shirt, pin and rally pack."
       redirect_to '/'
-    else
-      flash.now[:error] = "There was a problem with your registration and it wasn't saved. Please try again – or alternatively email route62rally@gmail.com."
-      render :new
-    end
+    # @registration = Registration.create registration_params.except(:authenticity_token)
+    # if @registration.valid?
+    #   RegistrationsMailer.notify(@registration).deliver
+    #   flash[:notice] = "Your registration has been submitted. We're sending you an email with the payment details and your reference number now."
+    #   redirect_to '/'
+    # else
+    #   flash.now[:error] = "There was a problem with your registration and it wasn't saved. Please try again – or alternatively email route62rally@gmail.com."
+    #   render :new
+    # end
   end
 
   private

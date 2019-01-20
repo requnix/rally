@@ -25,14 +25,14 @@
       </v-layout>
     </v-toolbar>
 
-    <% flash.each do |key, message| %>
-    <v-alert type="<%= key %>" :value="true">
-      <%= message %>
-    </v-alert>
-    <% end %>
-
     <v-content id="top">
       <v-container>
+        <% flash.each do |key, message| %>
+        <v-alert type="<%= key %>" :value="true">
+          <%= message %>
+        </v-alert>
+        <% end %>
+
         <v-card id="programme" class="mb-4">
           <v-card-title>
             <div class="title">Online Registration Form</div>

@@ -105,7 +105,7 @@
           <v-card-text class="text-xs-center">
             <div class="display-1 mb-3">
               <a @click="scroll('registration-info')" class="deep-orange--text">
-                Registrations are now open!
+                Registrations are now {{ open ? 'open' : 'closed' }}!
               </a>
             </div>
             <div id="clockdiv">
@@ -126,8 +126,12 @@
                 <div class="smalltext">Seconds</div>
               </div>
             </div>
-            <div class="my-3 title">
+            <div class="my-3 title" v-if="open">
               Registrations will close on 20<sup>th</sup> January 2019
+            </div>
+            <div class="my-3 title" v-else>
+              Registrations will be available on-site, <br>
+              but will not include a t-shirt, pin or rally pack.
             </div>
           </v-card-text>
         </v-card>
@@ -225,7 +229,7 @@
             <p><strong>On-site Registration:</strong> Registration can be done on-site during the rally but does not include a t-shirt, pin or rally pack which are pre-made based on pre-registration.</p>
             <p>Please note: Check-ins on Thursday, February 14, and Friday, February 15, at main gate will close at 6.00pm. Should you be arriving after 6pm please contact Ammi at <a class="deep-orange--text" href="mailto:ammi@iafrica.com">ammi@iafrica.com</a> to arrange for late arrival check-in.</p>
           </v-card-text>
-          <v-card-actions>
+          <v-card-actions v-if="open">
             <v-btn color="deep-orange" href="/registrations/new?rider=true">
               Register as a Rider
             </v-btn>
@@ -887,6 +891,7 @@ window.Vue = new Vue({
       <%= key %>: true,
       <% end %>
     },
+    open: false, // NOTE: Setting this hides the application form
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
