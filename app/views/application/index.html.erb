@@ -105,10 +105,11 @@
           <v-card-text class="text-xs-center">
             <div class="display-1 mb-3">
               <a @click="scroll('registration-info')" class="deep-orange--text">
-                Registrations are now {{ open ? 'open' : 'closed' }}!
+                <span v-if="hibernating">Thank you for attending the <br> 2019 Route 62 Rally!</span>
+                <span v-else>Registrations are now {{ open ? 'open' : 'closed' }}!</span>
               </a>
             </div>
-            <div id="clockdiv">
+            <div id="clockdiv" v-if="!hibernating">
               <div>
                 <span class="days"></span>
                 <div class="smalltext">Days</div>
@@ -126,7 +127,10 @@
                 <div class="smalltext">Seconds</div>
               </div>
             </div>
-            <div class="my-3 title" v-if="open">
+            <div class="my-3 title" v-if="hibernating">
+              Watch this space for announcements about next year's rally!
+            </div>
+            <div class="my-3 title" v-else-if="open">
               Registrations will close on 20<sup>th</sup> January 2019
             </div>
             <div class="my-3 title" v-else>
@@ -892,6 +896,7 @@ window.Vue = new Vue({
       <% end %>
     },
     open: false, // NOTE: Setting this hides the application form
+    hibernating: true, // NOTE: Set this between the rally and announcement for next rally
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
