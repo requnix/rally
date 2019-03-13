@@ -5,6 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
         <v-btn small flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
+        <v-btn small flat href="#the-rally" @click="$vuetify.goTo('#the-rally', { offset: -80 })" :color="section == 'the-rally' ? 'deep-orange' : 'white'">The Rally</v-btn>
         <v-btn small flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
         <!-- <v-btn small flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn> -->
         <v-btn small flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
@@ -192,6 +193,39 @@
           </v-card-text>
         </v-card>
       </v-container>
+
+      <!-- The Rally -->
+      <v-container><v-card id="the-rally" class="mb-4">
+        <v-card-title>
+          <div class="title">The Rally (Pure Romance)</div>
+          <v-spacer></v-spacer>
+          <v-tooltip left>
+            <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
+              <v-icon>arrow_upward</v-icon>
+            </v-btn>
+            <span>Back to Top</span>
+          </v-tooltip>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text>
+          <p>In the years which my lady and I have been in a steady relationship, not once have I missed our Anniversary, her birthday, Valentine’s Day or even the odd bouquet of flowers!</p>
+          <p>It’s fair to say that we’re head over heels in love. You know, the good ‘ol fashioned type.  The Black and White flicks which portray an adoring housewife waving her soldier-husband good bye while he boards HMS Whatever to fight for freedom type. </p>
+          <p>It’s been pretty Lilies and romance until Valentine’s Day this year as I attended the Route 62 Rally, without her.</p>
+          <p>If you’ve never been to this rally, let me say with my hand on my heart that it is absolutely breathtaking! </p>
+          <p>Nestled between the mountains, warm springs and the familiar sound of a rumbling Harley engine – there’s pretty much nothing like it in South Africa.  In fact, it’s the longest running Harley rally in our beautiful country.  Harley-Davidson faithful attend with their partners, in clubs or on their own.  There’s an abundance of activities to keep you well entertained.  Or, if you just need some downtime, then why not unwind in the crystal clear pools which just so happen to have a bar close by.  The cocktails are great and the beer is ice cold!  Luckily, nobody took a pic of me drinking a pink drink.</p>
+          <p>Nestled between the mountains, warm springs and the familiar sound of a rumbling Harley engine – there’s pretty much nothing like it in South Africa.  In fact, it’s the longest running Harley rally in our beautiful country.  Harley-Davidson faithful attend with their partners, in clubs or on their own.  There’s an abundance of activities to keep you well entertained.  Or, if you just need some downtime, then why not unwind in the crystal clear pools which just so happen to have a bar close by.  The cocktails are great and the beer is ice cold! Luckily, nobody took a pic of me drinking a pink drink.</p>
+          <p>Riding there won’t exactly leave you in the desert yearning for a drop of water either, as it’s a stone’s throw from Tyger Valley but just far enough for you to clear your head and fall in love with the road. </p>
+          <p>AND THAT’S WHEN I DISCOVERED MY PROBLEM!</p>
+          <p>While I thoroughly enjoyed the well-organized rally (thanks to the Free Chapter) and the facilities which were on offer at Montagu Springs, it was the open road that made me realize something…</p>
+          <p>I’ve been cheating on my Mrs for years as I have a love affair with the open road and the Route 62 Rally is my mistress!</p>
+          <p>After all, I know I’ll be back next year again as the Route 62 Rally is pure romance!</p>
+          <p class="grey--text">(Now, about that pink drink…)</p>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-text class="text-xs-center">
+          by <strong>Ty The Harley Guy</strong>
+        </v-card-text>
+      </v-card></v-container>
 
       <v-container>
         <!-- Registration Info -->
@@ -869,6 +903,9 @@ window.Vue = new Vue({
     var watcher = scrollMonitor.create(document.getElementById('about-event'), -80);
     watcher.enterViewport(() => this.section = 'about-event');
     watcher.fullyEnterViewport(() => this.section = 'about-event');
+    watcher = scrollMonitor.create(document.getElementById('the-rally'), -80);
+    watcher.enterViewport(() => this.section = 'the-rally');
+    watcher.fullyEnterViewport(() => this.section = 'the-rally');
     watcher = scrollMonitor.create(document.getElementById('registration-info'), -80);
     watcher.enterViewport(() => this.section = 'registration-info');
     watcher.fullyEnterViewport(() => this.section = 'registration-info');
@@ -900,6 +937,7 @@ window.Vue = new Vue({
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
+      { text: 'The Rally', value: 'pure-romance' },
       { text: 'Registration Info', value: 'registration-info' },
       // { text: 'Programme', value: 'programme' },
       { text: 'Accommodation', value: 'accommodation' },
