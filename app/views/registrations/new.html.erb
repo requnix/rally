@@ -40,8 +40,9 @@
           <v-divider></v-divider>
           <v-card-text>
             <p>
-              The registration fee is R 870 per participant.
-              This includes a Rally Pack, 3 days of fun and Saturday night buffet meal.
+              The registration fee is R 870 per participant.<br>
+              This includes a Rally Pack, 3 days of fun and Saturday night buffet meal.<br>
+              <em>An optional surcharge of R 95 may added for the Pasta Buffet on Friday night.</em>
             </p>
 
             <ul class="red--text text--darken-1 px-3 mb-2 subheading">
@@ -133,12 +134,21 @@
               <input type="hidden" name="payment_method" :value="registration.payment">
 
               <v-checkbox
+                label="I would like the Friday pasta buffet added for an additional R 95"
+                v-model="registration.fridayMeal"
+              ></v-checkbox>
+              <input type="hidden" name="friday_meal" :value="registration.fridayMeal">
+
+              <v-checkbox
                 label="I accept the terms and conditions"
                 v-model="registration.terms" required
                 :rules="[(v) => !!v || 'You have to accept the terms and conditions to register']"
               ></v-checkbox>
               <input type="hidden" name="terms_and_conditions" :value="registration.terms">
             </v-card-text>
+            <v-card-actions v-if="$vuetify.breakpoint.xsOnly"><v-spacer></v-spacer>
+              Total: &nbsp; <strong>R {{ registration.fridayMeal ? 870 + 95 : 870 }}</strong>
+            </v-card-actions>
             <v-card-actions>
               <v-dialog fullscreen v-model="showingTerms">
                 <v-btn flat color="warning" slot="activator">Terms and Conditions</v-btn>
@@ -174,6 +184,9 @@
                 </v-card>
               </v-dialog>
               <v-spacer></v-spacer>
+              <span v-if="$vuetify.breakpoint.smAndUp">
+                Total: <strong>R {{ registration.fridayMeal ? 870 + 95 : 870 }}</strong> &nbsp;
+              </span>
               <v-btn :disabled="!valid" color="primary" type="submit">Register as a {{ registration.rider ? 'Rider' : 'Pillion' }}</v-btn>
           </v-form>
         </v-card>
@@ -208,6 +221,7 @@ window.Vue = new Vue({
       chapter: '<%= @registration.chapter %>',
       shirt: '<%= @registration.shirt_size || 'Large' %>',
       payment: '<%= @registration.payment_method || 'EFT (Electronic Fund Transfer)' %>',
+      fridayMeal: <%= @registration.friday_meal || false %>,
       terms: false
     },
     showingTerms: false

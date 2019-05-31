@@ -25,7 +25,7 @@ class RegistrationsController < ApplicationController
       :rider, :first_name, :last_name,
       :residential_address, :postal_address,
       :email, :contact_number, :alternate_contact_number,
-      :motorcycle, :chapter, :shirt_size,
+      :motorcycle, :chapter, :shirt_size, :friday_meal,
       :payment_method, :terms_and_conditions,
       :authenticity_token
     )
