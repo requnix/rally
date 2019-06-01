@@ -15,7 +15,6 @@ ActiveAdmin.register Registration do
     actions
   end
 
-  filter :year
   filter :rider, label: 'Type'
   filter :first_name
   filter :last_name
@@ -24,7 +23,9 @@ ActiveAdmin.register Registration do
   filter :paid
   filter :created_at, label: 'Registered'
 
-  # scope '2019', -> { where year: 2019 }
+  scope :all
+  scope('2019') { |reg| reg.where year: 2019 }
+  scope('2020', default: true) { |reg| reg.where year: 2020 }
 
   form do |f|
     f.inputs name: 'Registration' do
