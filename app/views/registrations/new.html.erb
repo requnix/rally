@@ -114,10 +114,10 @@
               ></v-text-field>
 
               <v-text-field
-                label="Bike" name="motorcycle"
+                label="Harley-Davidson Model" name="motorcycle"
                 v-model="registration.motorcycle"
                 required :rules="registration.rider ? [(v) => !!v || 'You need to add your bike here'] : []"
-                hint="Let us know what bike you ride"
+                hint="The rally is open to Harley-Davidson riders and pillions"
               ></v-text-field>
 
               <v-select
