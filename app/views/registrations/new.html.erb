@@ -41,8 +41,12 @@
           <v-card-text>
             <p>
               The registration fee is R 870 per participant.<br>
-              This includes a Rally Pack, 3 days of fun and Saturday night buffet meal.<br>
-              <em>An optional surcharge of R 95 may added for the Pasta Buffet on Friday night.</em>
+              This includes a Rally Pack, 3 days of fun and Saturday night buffet meal.
+            </p>
+            <p>
+              <strong>Back by popular demand: Friday night pasta evening.</strong><br>
+              <em>An optional surcharge of R 95 may added for the Pasta Buffet on Friday night.</em><br>
+              Tick the check box below to be included in the pasta evening.
             </p>
 
             <ul class="red--text text--darken-1 px-3 mb-2 subheading">
@@ -134,6 +138,7 @@
               <input type="hidden" name="payment_method" :value="registration.payment">
 
               <v-checkbox
+                class="attention"
                 label="I would like the Friday pasta buffet added for an additional R 95"
                 v-model="registration.fridayMeal"
               ></v-checkbox>
@@ -146,7 +151,8 @@
               ></v-checkbox>
               <input type="hidden" name="terms_and_conditions" :value="registration.terms">
             </v-card-text>
-            <v-card-actions v-if="$vuetify.breakpoint.xsOnly"><v-spacer></v-spacer>
+            <v-card-actions v-if="$vuetify.breakpoint.xsOnly" style="font-size: 1.2em;">
+              <v-spacer></v-spacer>
               Total: &nbsp; <strong>R {{ registration.fridayMeal ? 870 + 95 : 870 }}</strong>
             </v-card-actions>
             <v-card-actions>
@@ -184,7 +190,7 @@
                 </v-card>
               </v-dialog>
               <v-spacer></v-spacer>
-              <span v-if="$vuetify.breakpoint.smAndUp">
+              <span v-if="$vuetify.breakpoint.smAndUp" style="font-size: 1.2em;">
                 Total: <strong>R {{ registration.fridayMeal ? 870 + 95 : 870 }}</strong> &nbsp;
               </span>
               <v-btn :disabled="!valid" color="primary" type="submit">Register as a {{ registration.rider ? 'Rider' : 'Pillion' }}</v-btn>

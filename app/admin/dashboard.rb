@@ -5,7 +5,7 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
-        span "There are currently #{Registration.where(year: 2019).count} registrations for 2019"
+        span "There are currently #{Registration.where(year: 2020).count} registrations for 2020"
         small link_to 'Download Excel Export', admin_registrations_path(format: :xls)
       end
     end

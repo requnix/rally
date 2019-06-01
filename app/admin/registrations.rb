@@ -10,6 +10,7 @@ ActiveAdmin.register Registration do
     column :reference
     column(:type) { |r| r.rider ? 'Rider' : 'Pillion' }
     column :paid
+    column(:amount) { |r| r.friday_meal ? 965 : 870 }
     column 'Registered', :created_at
     actions
   end
@@ -22,6 +23,8 @@ ActiveAdmin.register Registration do
   filter :reference
   filter :paid
   filter :created_at, label: 'Registered'
+
+  # scope '2019', -> { where year: 2019 }
 
   form do |f|
     f.inputs name: 'Registration' do
