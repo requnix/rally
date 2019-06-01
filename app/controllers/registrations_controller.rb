@@ -1,7 +1,7 @@
 class RegistrationsController < ApplicationController
   def new
     @registration = Registration.new rider: params[:rider] != 'false'
-    flash.now[:warning] = "Registrations are now closed! On-site registrations are available, but excludes a t-shirt, pin and rally pack."
+    # flash.now[:warning] = "Registrations are now closed! On-site registrations are available, but excludes a t-shirt, pin and rally pack."
   end
 
   def create
