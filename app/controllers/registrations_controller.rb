@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
     # flash[:notice] = "Registrations are now closed! On-site registrations are available, but excludes a t-shirt, pin and rally pack."
     # redirect_to '/'
     @registration = Registration.create registration_params.except(:authenticity_token)
-    if @registration.valid?
+    if @registration.persisted?
       RegistrationsMailer.notify(@registration).deliver
       flash[:notice] = "Your registration has been submitted. We're sending you an email with the payment details and your reference number now."
       redirect_to '/'
