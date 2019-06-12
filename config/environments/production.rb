@@ -91,7 +91,7 @@ Rails.application.configure do
   config.action_mailer.asset_host = 'https://www.route62rally.co.za'
   config.action_mailer.smtp_settings = {
     address: 'smtp-relay.sendinblue.com',
-    port: 25,
+    port: 587,
     user_name: 'route62rally@gmail.com',
     password: 'fILOUXAPV4MgTvrh'
   }
