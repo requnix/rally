@@ -90,9 +90,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://www.route62rally.co.za' }
   config.action_mailer.asset_host = 'https://www.route62rally.co.za'
   config.action_mailer.smtp_settings = {
-    address: 'mail.hover.com',
+    address: 'smtp-relay.sendinblue.com',
     port: 25,
-    user_name: 'route62rally@freechapter.capetown',
-    password: 'branch-usual-recreant-athletic'
+    user_name: 'route62rally@gmail.com',
+    password: 'fILOUXAPV4MgTvrh'
   }
 end
