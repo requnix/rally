@@ -64,8 +64,8 @@
         <v-carousel-item src="<%= image_url 'gallery/HDI1899.JPG' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">13 FEB - 16 FEB 2020</h4>
-              <h1 class="display-3 white--text">JOIN US IN 2020</h1>
+              <!-- <h4 class="title white--text">13 FEB - 16 FEB 2020</h4> -->
+              <h1 class="display-3 white--text">JOIN US</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
           </v-container>
@@ -74,7 +74,7 @@
         <v-carousel-item src="<%= image_url 'gallery/HDI1838.JPG' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">13 FEB - 16 FEB 2020</h4>
+              <!-- <h4 class="title white--text">13 FEB - 16 FEB 2020</h4> -->
               <h1 class="display-3 white--text">READY FOR ACTION</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -84,7 +84,7 @@
         <v-carousel-item src="<%= image_url 'gallery/HDI0843.JPG' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">13 FEB - 16 FEB 2020</h4>
+              <!-- <h4 class="title white--text">13 FEB - 16 FEB 2020</h4> -->
               <h1 class="display-3 white--text">RELAX &amp; REJUVENATE</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -95,15 +95,15 @@
       <v-container>
         <v-card id="countdown" class="mx-auto mb-3" style="max-width: 640px">
           <v-card-title>
-            <div class="display-3">Our 14<sup>th</sup> Rally Weekend</div>
-            <div class="title">13 - 16 February 2020, Montagu</div>
+            <div class="display-3">Our 15<sup>th</sup> Rally Weekend</div>
+            <div class="title">will take place in February 2022, Montagu</div>
           </v-card-title>
           <!-- Teaser Video -->
           <v-responsive>
             <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </v-responsive>
           <!-- Countdown Timer -->
-          <v-card-text class="text-xs-center">
+          <v-card-text class="text-xs-center" v-if="false">
             <div class="display-1 mb-3">
               <a @click="scroll('registration-info')" class="deep-orange--text">
                 <span v-if="hibernating">Thank you for attending the <br> 2019 Route 62 Rally!</span>
@@ -156,7 +156,33 @@
             </v-tooltip>
           </v-card-title>
           <v-divider></v-divider>
-          <v-card-text>
+          <v-card-text v-if="true" class="subheading">
+            <h2>15th Route 62 Rally for 2021 postponed</h2>
+
+            <p>
+              We are presently living in uncertain times. The Covid-19 Pandemic
+              has touched all our lives and also affected the economy. We may
+              not be clear of the virus next year. It is not certain that Avalon
+              Springs Resort will be fully operational to host our rally.
+            </p><p>
+              The Route 62 Rally Committee has decided that the most responsible
+              thing to do is to postpone the Rally scheduled for February 2021.
+              Normally, by this time registrations would have been open for 6
+              weeks, merchandise would have been ordered, vendors and sponsors
+              would be in place. Arrangements for the rally tent and
+              accommodation would have been established and the bands and music
+              would be finalized.
+            </p><p>
+              It was not an easy decision to postpone the longest continuously
+              running and most successful rally for Harley-Davidson motorcyclists.
+              Hopefully, 2022 will see things back to a semblance of normality
+              and we can once again roar into Montagu from all corners of the
+              country for the 15th Route 62 rally.
+            </p>
+
+            <p>See y’all in 2022!</p>
+          </v-card-text>
+          <v-card-text v-if="false">
             <p>February 2020 once again sees the start of the most definitive Harley-Davidson Rally south of the Sahara. <strong>The Famous Route 62 Rally</strong> will once again take place at the Avalon Springs Resort in Montagu, Western Cape from 13 Feb – 16 Feb 2020.</p>
             <p style="text-align: center; line-height: 1.5;"><strong>THIS WILL BE OUR 14<sup>th</sup> RALLY and you don’t want to miss this one.</strong></p>
             <p>The Route 62 Rally is the longest consecutive running Harley Davidson rally in South Africa and in 2019 we celebrated our 13th Birthday. We have moved the bar considerable higher from previous years so you need to join us and be part of this 2020 celebration. There will be music, stalls, tattoo artists, food stalls, Harley games, famous out rides, party and fun.</p>
