@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
         <v-btn small flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
-        <v-btn small flat href="#the-rally" @click="$vuetify.goTo('#the-rally', { offset: -80 })" :color="section == 'the-rally' ? 'deep-orange' : 'white'">The Rally</v-btn>
+        <!-- <v-btn small flat href="#the-rally" @click="$vuetify.goTo('#the-rally', { offset: -80 })" :color="section == 'the-rally' ? 'deep-orange' : 'white'">The Rally</v-btn> -->
         <v-btn small flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
         <!-- <v-btn small flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn> -->
         <v-btn small flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
@@ -221,7 +221,7 @@
       </v-container>
 
       <!-- The Rally -->
-      <v-container><v-card id="the-rally" class="mb-4">
+      <!-- <v-container><v-card id="the-rally" class="mb-4">
         <v-card-title>
           <div class="title">The Rally (Pure Romance)</div>
           <v-spacer></v-spacer>
@@ -251,7 +251,7 @@
         <v-card-text class="text-xs-center">
           by <strong>Ty The Harley Guy</strong>
         </v-card-text>
-      </v-card></v-container>
+      </v-card></v-container> -->
 
       <v-container>
         <!-- Registration Info -->
@@ -959,7 +959,7 @@ window.Vue = new Vue({
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
-      { text: 'The Rally', value: 'pure-romance' },
+      // { text: 'The Rally', value: 'pure-romance' },
       { text: 'Registration Info', value: 'registration-info' },
       // { text: 'Programme', value: 'programme' },
       { text: 'Accommodation', value: 'accommodation' },
