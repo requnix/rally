@@ -40,7 +40,7 @@
           <v-divider></v-divider>
           <v-card-text>
             <p>
-              The registration fee is R 870 per participant.<br>
+              The registration fee is R 1000 per participant.<br>
               This includes a Rally Pack, 3 days of fun and Saturday night buffet meal.
             </p>
             <p>
@@ -153,7 +153,7 @@
             </v-card-text>
             <v-card-actions v-if="$vuetify.breakpoint.xsOnly" style="font-size: 1.2em;">
               <v-spacer></v-spacer>
-              Total: &nbsp; <strong>R {{ registration.fridayMeal ? 870 + 95 : 870 }}</strong>
+              Total: &nbsp; <strong>R {{ registration.fridayMeal ? 1000 + 95 : 1000 }}</strong>
             </v-card-actions>
             <v-card-actions>
               <v-dialog fullscreen v-model="showingTerms">
@@ -191,7 +191,7 @@
               </v-dialog>
               <v-spacer></v-spacer>
               <span v-if="$vuetify.breakpoint.smAndUp" style="font-size: 1.2em;">
-                Total: <strong>R {{ registration.fridayMeal ? 870 + 95 : 870 }}</strong> &nbsp;
+                Total: <strong>R {{ registration.fridayMeal ? 1000 + 95 : 1000 }}</strong> &nbsp;
               </span>
               <v-btn :disabled="!valid" color="primary" type="submit">Register as a {{ registration.rider ? 'Rider' : 'Pillion' }}</v-btn>
           </v-form>
