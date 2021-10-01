@@ -151,7 +151,8 @@
           </v-card-title>
           <!-- Teaser Video -->
           <v-responsive>
-            <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <!-- <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+            <v-img src="<%= image_url 'cancelled.jpg' %>"></v-img>
           </v-responsive>
           <!-- Countdown Timer -->
           <v-card-text class="text-xs-center" v-if="false">
@@ -197,7 +198,7 @@
         <!-- About Event -->
         <v-card id="about-event" class="mb-4">
           <v-card-title>
-            <div class="title">About the Event</div>
+            <div class="title"><!-- About the Event --> Cancelation of the 2022 Route 62 Rally</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
               <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
@@ -208,10 +209,15 @@
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text class="subheading">
-            <h2>Cancelation of the 2022 Route 62 Rally</h2>
+            <p>We are very sad to announce that the #R62Rally2022 has had to be cancelled once again.</p>
+            <p>To all our loyal rally-goers and fellow riders, we know that you will be as disappointed as we are.</p>
+            <p>Even though this is a sign of the times, and probably not a shock to most; we really were doing everything in our power to make it happen. Against all odds.</p>
+            <p>The constant rollercoaster with restrictions, and the uncertainty about attendance allowances has made it impossible for us to get the necessary approvals and commitments we need in order to make this event as great as it always is.</p>
+            <p>There's just too much at risk. So we know you'll understand.</p>
+            <p>We ARE sad. We ARE disappointed. But... <i>WE RIDE ON!</i></p>
+            <p>See you on the road!</p>
 
-            <p>Due to the uncertainty of the future related to the Covid-19 pandemic and various obstacles thrown our way, the Rally committee has taken the responsible decision to cancel the rally for 2022.</p>
-            <p>We look forward to a time when we get back to normality.</p>
+            <p>All the best,<br><b>The Rally Team</b></p>
           </v-card-text>
           <v-card-text class="subheading" v-if="false">
             <h2>The Route 62 Rally is back in Montagu for 2022</h2>
