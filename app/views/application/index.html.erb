@@ -64,7 +64,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner2.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">JOIN US</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -74,7 +74,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner3.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">READY FOR ACTION</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -84,7 +84,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner4.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">RELAX &amp; REJUVENATE</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -94,7 +94,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner5.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">JOIN US</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -104,7 +104,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner6.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">READY FOR ACTION</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -114,7 +114,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner7.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">RELAX &amp; REJUVENATE</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -124,7 +124,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner8.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">JOIN US</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -134,7 +134,7 @@
         <v-carousel-item src="<%= image_url 'gallery/R62-Banner4.jpg' %>">
           <v-container fill-height>
             <v-layout column align-center justify-center>
-              <h4 class="title white--text">CANCELED</h4>
+              <h4 class="title white--text">9 - 12 FEBRUARY 2023</h4>
               <h1 class="display-3 white--text">RELAX &amp; REJUVENATE</h1>
               <h4 class="title white--text">MONTAGU</h4>
             </v-layout>
@@ -146,13 +146,11 @@
         <v-card id="countdown" class="mx-auto mb-3" style="max-width: 640px">
           <v-card-title>
             <div class="display-3">Our 15<sup>th</sup> Rally Weekend</div>
-            <!-- <div class="title">will take place in February 2022, Montagu</div> -->
-            <div class="title">CANCELED</div>
+            <div class="title">will take place in February 2023, Montagu</div>
           </v-card-title>
           <!-- Teaser Video -->
           <v-responsive>
-            <!-- <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-            <v-img src="<%= image_url 'cancelled.jpg' %>"></v-img>
+            <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </v-responsive>
           <!-- Countdown Timer -->
           <v-card-text class="text-xs-center" v-if="false">
@@ -198,7 +196,7 @@
         <!-- About Event -->
         <v-card id="about-event" class="mb-4">
           <v-card-title>
-            <div class="title"><!-- About the Event --> Cancelation of the 2022 Route 62 Rally</div>
+            <div class="title">About the Event</div>
             <v-spacer></v-spacer>
             <v-tooltip left>
               <v-btn slot="activator" small flat fab href="#countdown" @click="$vuetify.goTo('#countdown', { offset: $vuetify.breakpoint.smAndUp ? -60 : -120 })">
@@ -208,7 +206,7 @@
             </v-tooltip>
           </v-card-title>
           <v-divider></v-divider>
-          <v-card-text class="subheading">
+          <v-card-text class="subheading" v-if="false">
             <p>We are very sad to announce that the #R62Rally2022 has had to be cancelled once again.</p>
             <p>To all our loyal rally-goers and fellow riders, we know that you will be as disappointed as we are.</p>
             <p>Even though this is a sign of the times, and probably not a shock to most; we really were doing everything in our power to make it happen. Against all odds.</p>
@@ -219,30 +217,30 @@
 
             <p>All the best,<br><b>The Rally Team</b></p>
           </v-card-text>
-          <v-card-text class="subheading" v-if="false">
-            <h2>The Route 62 Rally is back in Montagu for 2022</h2>
+          <v-card-text class="subheading">
+            <h2>The Route 62 Rally is back in Montagu for 2023</h2>
 
             <h3>Covid cannot keep bikers in lockdown for long.</h3>
             <p>So, ride in freedom to the vibrant rally venue at Avalon Springs on Route 62 in the picturesque karoo. Make sure you once again roar into Montagu from all corners of the country and join us to celebrate the 15th edition of the longest continuously running and most successful rally for Harley-Davidson motorcyclists.</p>
             <p>The rally committee is hard at work to ensure this is one event you do NOT want to miss.</p>
             <p>All Covid protocols are being taken into account and will be adhered too.</p>
-            <p>So, make sure you register in time, and we look forward to giving you a warm welcome in February 2022.</p>
+            <p>So, make sure you register in time, and we look forward to giving you a warm welcome in February 2023.</p>
             <p class="red--text"><strong>Rolling Thunder will once again echo in the streets of Montagu.</strong></p>
           </v-card-text>
-          <v-card-text v-if="false">
-            <p>February 2022 once again sees the start of the most definitive Harley-Davidson Rally south of the Sahara. <strong>The Famous Route 62 Rally</strong> will once again take place at the Avalon Springs Resort in Montagu, Western Cape from 10 Feb – 13 Feb 2022.</p>
+          <v-card-text>
+            <p>February 2023 once again sees the start of the most definitive Harley-Davidson Rally south of the Sahara. <strong>The Famous Route 62 Rally</strong> will once again take place at the Avalon Springs Resort in Montagu, Western Cape from 9 Feb – 12 Feb 2023.</p>
             <p style="text-align: center; line-height: 1.5;"><strong>THIS WILL BE OUR 15<sup>th</sup> RALLY and you don’t want to miss this one.</strong></p>
 
-            <p>The Route 62 Rally is the longest consecutive running Harley Davidson rally in South Africa. We have raised the bar considerable higher from previous years, so you need to join us and be part of this 2022 celebration. There will be music, stalls, tattoo artists, food stalls, Harley games, famous out rides, party and fun.</p>
+            <p>The Route 62 Rally is the longest consecutive running Harley Davidson rally in South Africa. We have raised the bar considerably higher from previous years, so you need to join us and be part of this 2023 celebration. There will be music, stalls, tattoo artists, food stalls, Harley games, famous out rides, party and fun.</p>
             <p>Each February since 2007 has seen the staging in Montagu of the Route 62 Harley Rally. It is currently staged at the host site of <strong>Avalon Springs in Montagu</strong>. With over 500 bikers attending, it is one of the biggest and best Harley rallies in Africa hosted by a single club, Free Chapter of Cape Town.</p>
             <p>Harley Bikers from all over South Africa and even from other countries make their way to Montagu on a wide range of bikes, dressed in denim and leather and bedecked with patches and badges. They are warmly welcomed by the friendly reception crew and each receives a well-stocked goody-bag. The program includes <strong>interesting outrides, great food, cold frosties and rock bands to party the nights away</strong>.</p>
             <p>On Saturday morning the traditional mass ride takes the posse of gleaming chrome in a rolling thunder of V-Twin engines through the local streets. This is followed by a variety of challenging Harley Games back at the rally site, designed to test skills to the limit.</p>
             <p>The rally site is well served by local wine estates, a tattoo artist, a Harley dealer &amp; workshop, Sushi bar,  bike wash, food stalls and more. Each evening the roar of Harleys is replaced by the rock bands that ensure a pulsating rhythm continues long into the night. For those wanting a more leisurely pace, there are the soothing waters of the <strong>hot springs and plunge pools</strong>.</p>
             <p>It is more blessed to give than to receive and funds are raised for <strong>charities</strong> serving the local communities. It is always a happy weekend followed by sad farewells to new friends and old with the hope of meeting again next year at the <strong>Route 62 Rally</strong>.</p>
           </v-card-text>
-          <v-divider v-if="false"></v-divider>
+          <v-divider></v-divider>
           <!-- Gallery -->
-          <v-dialog v-model="viewingAboutGallery" max-width="800px" v-if="false">
+          <v-dialog v-model="viewingAboutGallery" max-width="800px">
             <v-carousel style="max-height: 600px" :cycle="false" interval="60000" v-model="aboutGalleryIndex">
               <v-carousel-item
                 v-for="(src, i) in galleries.about"
@@ -251,7 +249,7 @@
               />
             </v-carousel>
           </v-dialog>
-          <v-card-text v-if="false">
+          <v-card-text>
             <v-layout class="row" style="overflow-x: scroll; height: 135px">
               <img
                 v-for="image, index in galleries.about"
@@ -314,7 +312,7 @@
           <v-divider></v-divider>
           <v-card-text>
             <p>This is a closed <strong>Harley-Davidson Motorcycle Rally</strong> and is open to all <strong>Harley-Davidson</strong> riders and pillions only.</p>
-            <p><strong>On-Line Registration:</strong> On-line registration has been delayed due to the latest Covid spike until August 2021. At this stage the Rally is still on for Feb 2022.<br />
+            <p><strong>On-Line Registration:</strong> On-line registration has been delayed due to the latest Covid spike until August 2021. At this stage the Rally is still on for Feb 2023.<br />
             Please note: <strong>Each participant will need to fill in a separate registration</strong> &#8211; the rally fee of <strong>R1000</strong> is per person irrespective if you are a rider or a pillion.<br />
             Please note: Children under 12 years free, however you need to pay for their meals (Special Kids meal pricing will be available on site).</p>
 
@@ -532,7 +530,7 @@
         </v-card>
       </v-container>
 
-      <v-container v-if="false">
+      <v-container>
         <!-- Accommodation -->
         <v-card id="accommodation" class="mb-4">
           <v-card-title>
@@ -577,11 +575,11 @@
                     </tr>
                     <tr>
                       <td>Double sharing</td>
-                      <td>R 500 per person</td>
+                      <td>R 575 per person</td>
                     </tr>
                     <tr>
-                      <td>Triple or more sharing</td>
-                      <td>R 500 per person</td>
+                      <td>Four or more sharing mountain chalets</td>
+                      <td>R 520 per person</td>
                     </tr>
                   </tbody>
                 </table>
@@ -635,7 +633,7 @@
               </v-card-text>
             </v-card>
 
-            <v-card color="grey darken-4" class="mb-2">
+            <v-card color="grey darken-4" class="mb-2" v-if="false">
               <v-card-title class="deep-orange darken-2">
                 <div class="subheading">Montagu Springs</div>
                 <v-spacer></v-spacer>
@@ -644,7 +642,7 @@
               <v-card-text>
                 <p>Montagu Springs situated adjacent to the Avalon Springs Host Hotel offers 90 self catering facilities with units sleeping up to four people. This tranquil resort with its palm lined entrance, peach and plum orchards, colorful bougainvillea and roses offers an alternate to the host hotel.</p>
                 <p>Special Rally Prices for the Plettenberg homes are per person sharing excluding breakfast. Meals including breakfast can be provided by Avalon Springs Hotel for your account.Should you wish to extend your stay the same rate will apply for the extended dates – subject to availability.</p>
-                <p>Effective Dates: 10 Feb – 13 Feb 2022</p>
+                <p>Effective Dates: 9 Feb – 12 Feb 2023</p>
 
                 <table class="table mb-2">
                   <thead>
@@ -966,7 +964,7 @@ window.Vue = new Vue({
   },
   mounted() {
     // Start the countdown timer
-    var deadline = new Date(2020, 1, 13, 10, 00)
+    var deadline = new Date(2023, 1, 9, 10, 00)
     initializeClock('clockdiv', deadline)
 
     // Watch elements for scrolling
@@ -1003,7 +1001,7 @@ window.Vue = new Vue({
       <% end %>
     },
     open: false, // NOTE: Setting this hides the application form
-    hibernating: false, // NOTE: Set this between the rally and announcement for next rally
+    hibernating: true, // NOTE: Set this between the rally and announcement for next rally
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
