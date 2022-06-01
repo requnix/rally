@@ -45,6 +45,7 @@ ActiveAdmin.register Registration do
       f.input :payment_method, as: :select, collection: ['EFT (Electronic Fund Transfer)', 'Cash Deposit'], include_blank: false
       f.input :reference, input_html: { disabled: true }
       f.input :terms_and_conditions, label: 'Accepted terms and conditions'
+      f.input :friday_meal
       f.input :paid
     end
     f.actions

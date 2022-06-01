@@ -93,6 +93,6 @@ Rails.application.configure do
     address: 'smtp-relay.sendinblue.com',
     port: 587,
     user_name: 'route62rally@gmail.com',
-    password: 'fILOUXAPV4MgTvrh'
+    password: 'LfGX4jDcU7gpEAFz'
   }
 end
