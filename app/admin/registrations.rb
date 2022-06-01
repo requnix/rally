@@ -25,7 +25,8 @@ ActiveAdmin.register Registration do
 
   scope :all
   scope('2019') { |reg| reg.where year: 2019 }
-  scope('2020', default: true) { |reg| reg.where year: 2020 }
+  scope('2020') { |reg| reg.where year: 2020 }
+  scope('2023', default: true) { |reg| reg.where year: 2023 }
 
   form do |f|
     f.inputs name: 'Registration' do

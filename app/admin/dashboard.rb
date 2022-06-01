@@ -5,9 +5,9 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
-        span "There are currently #{pluralize Registration.where(year: 2020).count, 'registration'} for 2020"
+        span "There are currently #{pluralize Registration.where(year: 2023).count, 'registration'} for 2023"
         small link_to 'Download Excel Export', admin_registrations_path(format: :xls)
-        span "Last year this time there were #{pluralize Registration.where(year: 2019).where('created_at < ?', 1.year.ago).count, 'registration'}."
+        span "Last rally, at  this time, there were #{pluralize Registration.where(year: 2020).where('created_at < ?', 3.years.ago).count, 'registration'}."
       end
     end
 
