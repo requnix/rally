@@ -56,7 +56,7 @@ ActiveAdmin.register Registration do
                 :email, :contact_number, :alternate_contact_number,
                 :motorcycle, :chapter, :shirt_size,
                 :payment_method, :terms_and_conditions,
-                :authenticity_token, :year
+                :authenticity_token, :year, :friday_meal
 
   # Excel configuration
   config.xls_builder.header_format = { weight: :bold }
