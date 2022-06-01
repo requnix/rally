@@ -6,9 +6,9 @@
       <v-toolbar-items v-if="this.$vuetify.breakpoint.lgAndUp">
         <v-btn small flat href="#about-event" @click="$vuetify.goTo('#about-event', { offset: -80 })" :color="section == 'about-event' ? 'deep-orange' : 'white'">About event</v-btn>
         <!-- <v-btn small flat href="#the-rally" @click="$vuetify.goTo('#the-rally', { offset: -80 })" :color="section == 'the-rally' ? 'deep-orange' : 'white'">The Rally</v-btn> -->
-        <!-- <v-btn small flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn> -->
+        <v-btn small flat href="#registration-info" @click="$vuetify.goTo('#registration-info', { offset: -80 })" :color="section == 'registration-info' ? 'deep-orange' : 'white'">Registration Info</v-btn>
         <!-- <v-btn small flat href="#programme" @click="$vuetify.goTo('#programme', { offset: -80 })" :color="section == 'programme' ? 'deep-orange' : 'white'">Programme</v-btn> -->
-        <!-- <v-btn small flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn> -->
+        <v-btn small flat href="#accommodation" @click="$vuetify.goTo('#accommodation', { offset: -80 })" :color="section == 'accommodation' ? 'deep-orange' : 'white'">Accommodation</v-btn>
         <!-- <v-btn small flat href="#charity" @click="$vuetify.goTo('#charity', { offset: -80 })" :color="section == 'charity' ? 'deep-orange' : 'white'">Charity</v-btn> -->
         <v-btn small flat href="#sponsors" @click="$vuetify.goTo('#sponsors', { offset: -80 })" :color="section == 'sponsors' ? 'deep-orange' : 'white'">Sponsors</v-btn>
         <v-btn small flat href="#contact" @click="$vuetify.goTo('#contact', { offset: -80 })" :color="section == 'contact' ? 'deep-orange' : 'white'">Contact</v-btn>
@@ -296,7 +296,7 @@
         </v-card-text>
       </v-card></v-container> -->
 
-      <v-container v-if="false">
+      <v-container>
         <!-- Registration Info -->
         <v-card id="registration-info" class="mb-4">
           <v-card-title>
@@ -958,9 +958,9 @@ window.Vue = new Vue({
     var watcher = scrollMonitor.create(document.getElementById('about-event'), -80);
     watcher.enterViewport(() => this.section = 'about-event');
     watcher.fullyEnterViewport(() => this.section = 'about-event');
-    watcher = scrollMonitor.create(document.getElementById('the-rally'), -80);
-    watcher.enterViewport(() => this.section = 'the-rally');
-    watcher.fullyEnterViewport(() => this.section = 'the-rally');
+    // watcher = scrollMonitor.create(document.getElementById('the-rally'), -80);
+    // watcher.enterViewport(() => this.section = 'the-rally');
+    // watcher.fullyEnterViewport(() => this.section = 'the-rally');
     watcher = scrollMonitor.create(document.getElementById('registration-info'), -80);
     watcher.enterViewport(() => this.section = 'registration-info');
     watcher.fullyEnterViewport(() => this.section = 'registration-info');
@@ -987,15 +987,15 @@ window.Vue = new Vue({
       <%= key %>: true,
       <% end %>
     },
-    open: false, // NOTE: Setting this hides the application form
-    hibernating: true, // NOTE: Set this between the rally and announcement for next rally
+    open: true, // NOTE: Setting this hides the application form
+    hibernating: false, // NOTE: Set this between the rally and announcement for next rally
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
-      // { text: 'The Rally', value: 'pure-romance' },
-      // { text: 'Registration Info', value: 'registration-info' },
+      // { text: 'The Rally', value: 'the-rally' },
+      { text: 'Registration Info', value: 'registration-info' },
       // { text: 'Programme', value: 'programme' },
-      // { text: 'Accommodation', value: 'accommodation' },
+      { text: 'Accommodation', value: 'accommodation' },
       // { text: 'Charity', value: 'charity' },
       { text: 'Sponsors', value: 'sponsors' },
       { text: 'Contact', value: 'contact' }
