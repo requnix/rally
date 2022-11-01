@@ -153,10 +153,10 @@
             <iframe src="https://player.vimeo.com/video/122723616?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </v-responsive>
           <!-- Countdown Timer -->
-          <v-card-text class="text-xs-center" v-if="false">
+          <v-card-text class="text-xs-center" v-if="true">
             <div class="display-1 mb-3">
               <a @click="scroll('registration-info')" class="deep-orange--text">
-                <span v-if="hibernating">Thank you for attending the <br> 2019 Route 62 Rally!</span>
+                <span v-if="hibernating">Thank you for attending the <br> 2023 Route 62 Rally!</span>
                 <span v-else>Registrations are now {{ open ? 'open' : 'closed' }}!</span>
               </a>
             </div>
@@ -349,6 +349,11 @@
             </v-btn>
             <v-btn color="deep-orange" href="/registrations/new?rider=false">
               Register as a Pillion
+            </v-btn>
+          </v-card-actions>
+          <v-card-actions v-if="full">
+            <v-btn color="deep-orange" disabled>
+              Sorry folks! Due to an overwhelming response of over 600 registrations we are unfortunately forced to close registrations. We have no more space!
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -987,7 +992,8 @@ window.Vue = new Vue({
       <%= key %>: true,
       <% end %>
     },
-    open: true, // NOTE: Setting this hides the application form
+    open: false, // NOTE: Setting this hides the application form
+    full: true, // NOTE: Set this if the rally is at capacity early
     hibernating: false, // NOTE: Set this between the rally and announcement for next rally
     section: null,
     navOptions: [
