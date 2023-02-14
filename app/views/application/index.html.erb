@@ -300,7 +300,7 @@
         <v-alert type="notice" color="deep-orange" :value="full" class="headline">
           Sorry folks! Due to an overwhelming response we have over 600 registrations and are unfortunately forced to closed registrations. We have no more space!
         </v-alert>
-        
+
         <!-- Registration Info -->
         <v-card id="registration-info" class="mb-4">
           <v-card-title>
@@ -996,8 +996,8 @@ window.Vue = new Vue({
       <% end %>
     },
     open: false, // NOTE: Setting this hides the application form
-    full: true, // NOTE: Set this if the rally is at capacity early
-    hibernating: false, // NOTE: Set this between the rally and announcement for next rally
+    full: false, // NOTE: Set this if the rally is at capacity early
+    hibernating: true, // NOTE: Set this between the rally and announcement for next rally
     section: null,
     navOptions: [
       { text: 'About Event', value: 'about-event' },
